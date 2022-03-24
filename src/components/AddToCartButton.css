@@ -1,0 +1,17 @@
+.ProductCard-Button {
+  align-self: flex-end;
+  background-color: var(--button);
+  border-radius: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  font: 600;
+  margin-top: 1rem;
+  padding: 10px 15px;
+  width: fit-content;
+}
+
+.ProductCard-Button:hover {
+  box-shadow: 3px 4px 4px rgba(63, 63, 63, 0.301);
+  filter: brightness(120%);
+}

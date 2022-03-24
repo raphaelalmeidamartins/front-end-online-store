@@ -1,0 +1,15 @@
+.FreeShipping {
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  justify-content: flex-end;
+  right: 1rem;
+  top: 5px;
+}
+
+.FreeShipping-icon {
+  font-size: 30px;
+  height: 30px;
+  margin-left: 0.5rem;
+  width: 30px;
+}

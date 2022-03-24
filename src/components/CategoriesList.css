@@ -1,0 +1,50 @@
+.CategoriesList {
+  align-items: stretch;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin-right: 1rem;
+  position: sticky;
+  bottom: 0;
+  transition: 400ms;
+  width: 375px;
+}
+
+.CategoriesList:hover {
+  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.486);
+}
+
+.CategoriesList ul li input {
+  position: absolute;
+  visibility: collapse;
+}
+
+.CategoriesList h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.2rem;
+}
+
+.CategoriesList ul li {
+  list-style: none;
+  padding: 1.2rem;
+  position: relative;
+  transition: 400ms;
+}
+
+.CategoriesList ul li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.CategoriesList ul li:hover {
+  background-color: var(--gray);
+}
+
+.CategoriesList ul li label {
+  cursor: pointer;
+}
+

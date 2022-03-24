@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.pageContainer {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 80px;
+  max-width: 1250px;
+  padding: 20px;
+  width: 100vw;
+}
+
+.SearchList {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.SearchList * {
+  transition: 400ms;
+}
+
+.SearchList-container-cards {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.SearchList-searchbar {
+  align-items: center;
+  max-width: 800px;
+  position: relative;
+  width: 100%;
+}
+
+.SearchList-searchbar input {
+  border: 1px solid var(--dark-blue-transparent);
+  border-radius: 25px;
+  font-size: 18px;
+  padding: 5px 15px;
+  width: 100%;
+}
+
+.SearchList-searchbar-button {
+  align-items: center;
+  background-color: transparent;
+  color: var(--dark-blue);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  height: 34px;
+  justify-content: center;
+  opacity: 0.5;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  transition: 300ms;
+  width: 34px;
+}
+
+.SearchList-searchbar-button:hover {
+  opacity: 1;
+}
+
+.SearchList-searchbar-button * {
+  margin-bottom: 1px;
+}
+
+.SearchList-search-message {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media screen and ( max-width : 476px ) {
+
+  .SearchList-search-message {
+    text-align: center;
+    width: 300px;
+  }
+}
