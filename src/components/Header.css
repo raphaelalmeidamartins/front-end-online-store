@@ -30,6 +30,7 @@
 .Header-cart-icon {
   align-items: center;
   color: var(--text-icons);
+  cursor: pointer;
   display: flex;
   font-size: 2.2rem;
   height: 50px;
@@ -56,7 +57,7 @@
   width: 20px;
 }
 
-@media screen and ( min-width : 645px ) {
+@media screen and ( min-width : 650px ) {
 
   .Header-cart-icon-category {
     display: none;

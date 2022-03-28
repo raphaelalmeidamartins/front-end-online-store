@@ -84,3 +84,11 @@
     width: 300px;
   }
 }
+
+@media screen and ( max-width : 1150px ) {
+
+  .SearchList-container-cards {
+    align-items: stretch;
+    justify-content: center;
+  }
+}
