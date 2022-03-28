@@ -2,7 +2,7 @@
   align-items: center;
   background-color: var(--dark-blue);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
@@ -10,11 +10,18 @@
   z-index: 10;
 }
 
-.Header a {
+.Header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1120px;
+}
+
+.Header-container a {
   position: relative;
 }
 
 .Header-logo {
+  object-fit: contain;
   width: 150px;
 }
 
@@ -54,7 +61,7 @@
   }
 
   .Header-logo {
-    margin-left: 0.7rem;
+    margin-left: 1rem;
     width: 180px;
   }
 }

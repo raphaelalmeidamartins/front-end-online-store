@@ -1,21 +1,26 @@
 .CategoriesList {
   align-items: stretch;
   background-color: white;
+  border: 1px solid var(--gray);
   border-radius: 10px;
-  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
   color: var(--black);
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  height: 85vh;
   margin-right: 1rem;
+  padding-bottom: 1rem;
   position: sticky;
-  bottom: 0;
+  top: 100px;
   transition: 400ms;
   width: 375px;
 }
 
 .CategoriesList:hover {
-  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.486);
+  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.CategoriesList ul {
+  overflow-y: scroll;
 }
 
 .CategoriesList ul li input {

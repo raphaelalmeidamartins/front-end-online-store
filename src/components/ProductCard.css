@@ -1,12 +1,12 @@
 .ProductCard {
   background-color: white;
+  border: 1px solid var(--gray);
   border-radius: 10px;
-  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   height: 240px;
   justify-content: space-between;
-  margin: 1.5rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   padding-left: 120px;
   position: relative;
@@ -14,7 +14,7 @@
 }
 
 .ProductCard:hover {
-  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.486);
+  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
 }
 
 .ProductCard a {

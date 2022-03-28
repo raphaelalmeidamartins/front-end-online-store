@@ -12,20 +12,22 @@ class Header extends Component {
 
     return (
       <header className="Header">
-        <div className="Header-cart-icon Header-cart-icon-category">
-          <BiCategory />
+        <div className="Header-container">
+          <div className="Header-cart-icon Header-cart-icon-category">
+            <BiCategory />
+          </div>
+          <img className="Header-logo" src={ logo } alt="March 25th Online Store" />
+          <Link data-testid="shopping-cart-button" to="/shopping-cart">
+            <div className="Header-cart-icon">
+              <RiShoppingCartFill />
+            </div>
+            <div className="Header-cart-quantity">
+              <span data-testid="shopping-cart-size">
+                {itemsQuantity}
+              </span>
+            </div>
+          </Link>
         </div>
-        <img className="Header-logo" src={ logo } alt="March 25th Online Store" />
-        <Link data-testid="shopping-cart-button" to="/shopping-cart">
-          <div className="Header-cart-icon">
-            <RiShoppingCartFill />
-          </div>
-          <div className="Header-cart-quantity">
-            <span data-testid="shopping-cart-size">
-              {itemsQuantity}
-            </span>
-          </div>
-        </Link>
       </header>
     );
   }
