@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --dark-blue: #12089E;
-  --dark-blue-transparent: #12089e63;
-  --normal-blue: #0828A8;
-  --primary-text: #0F4C91;
-  --secondary-text: #087EA8;
-  --button: #089E9E;
+  --dark-primary-color: #FBC02D;
+  --light-primary-color: #FFF9C4;
+  --primary-color: #FFEB3B;
+  --text-icons: #212121;
+  --accent-color: #009688;
+  --primary-text: #212121;
+  --secondary-text: #757575;
+  --divider-color: #BDBDBD;
   --black: #21222a;
   --dark-gray: #4f515c;
   --gray: #cacddb;
-  --white: #eff1fd;
+  --white: #fcfdef;
   --font: Quicksand, sans-serif;
 }
 

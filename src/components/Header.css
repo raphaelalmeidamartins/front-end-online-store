@@ -1,6 +1,8 @@
 .Header {
   align-items: center;
-  background-color: var(--dark-blue);
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--divider-color);
+  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.123);
   display: flex;
   justify-content: center;
   padding: 0.5rem 1rem;
@@ -27,7 +29,7 @@
 
 .Header-cart-icon {
   align-items: center;
-  color: var(--white);
+  color: var(--text-icons);
   display: flex;
   font-size: 2.2rem;
   height: 50px;
@@ -36,7 +38,7 @@
 }
 
 .Header-cart-icon:hover {
-  color: white;
+  filter: brightness(300%);
 }
 
 .Header-cart-quantity {

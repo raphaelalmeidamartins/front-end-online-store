@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { BiCategory } from 'react-icons/bi';
 import { RiShoppingCartFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo-negativo.png';
+import logo from '../assets/logo-normal.png';
 import './Header.css';
 
 class Header extends Component {

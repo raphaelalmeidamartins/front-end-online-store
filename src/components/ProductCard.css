@@ -1,6 +1,6 @@
 .ProductCard {
   background-color: white;
-  border: 1px solid var(--gray);
+  border: 1px solid var(--divider-color);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@
 
 .ProductCard-title {
   align-self: flex-end;
-  color: var(--black);
+  color: var(--primary-text);
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 5px;

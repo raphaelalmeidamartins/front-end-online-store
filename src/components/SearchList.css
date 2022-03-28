@@ -36,7 +36,7 @@
 }
 
 .SearchList-searchbar input {
-  border: 1px solid var(--gray);
+  border: 1px solid var(--divider-color);
   border-radius: 10px;
   box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.123);
   font-size: 18px;
@@ -51,7 +51,7 @@
 .SearchList-searchbar-button {
   align-items: center;
   background-color: transparent;
-  color: var(--dark-blue);
+  color: var(--primary-text);
   cursor: pointer;
   display: flex;
   font-size: 1.7rem;

@@ -1,7 +1,7 @@
 .ProductCard-Button {
   align-self: flex-end;
-  background-color: var(--button);
-  border-radius: 2rem;
+  background-color: var(--accent-color);
+  border-radius: 10px;
   color: var(--white);
   cursor: pointer;
   display: flex;
