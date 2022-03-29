@@ -24,7 +24,12 @@ class CategoriesList extends Component {
 
   render() {
     const { categories } = this.state;
-    const { filterByCategory, displayCategories, toggleCategories } = this.props;
+    const {
+      filterByCategory,
+      displayCategories,
+      toggleCategories,
+      categoryId,
+    } = this.props;
 
     return (
       <aside
@@ -38,7 +43,12 @@ class CategoriesList extends Component {
         <ul>
           {categories.map((item) => (
             <li key={ item.id } data-testid="category">
-              <label htmlFor={ item.id }>
+              <label
+                htmlFor={ item.id }
+                className={
+                  item.id === categoryId ? 'CategoriesList-selected' : null
+                }
+              >
                 <input
                   id={ item.id }
                   type="radio"
@@ -61,6 +71,7 @@ CategoriesList.propTypes = {
   filterByCategory: PropTypes.func.isRequired,
   displayCategories: PropTypes.bool.isRequired,
   toggleCategories: PropTypes.func.isRequired,
+  categoryId: PropTypes.string.isRequired,
 };
 
 export default CategoriesList;

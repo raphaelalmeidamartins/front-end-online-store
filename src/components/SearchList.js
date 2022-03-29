@@ -44,7 +44,7 @@ class SearchList extends Component {
   };
 
   render() {
-    const { productsList, query } = this.state;
+    const { productsList, query, categoryId } = this.state;
     const {
       handleAddCartToList,
       itemsQuantity,
@@ -58,6 +58,7 @@ class SearchList extends Component {
           filterByCategory={ this.filterByCategory }
           displayCategories={ displayCategories }
           toggleCategories={ toggleCategories }
+          categoryId={ categoryId }
         />
         <section className="SearchList">
           <div className="SearchList-searchbar">
