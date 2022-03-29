@@ -20,14 +20,20 @@ class CategoriesList extends Component {
     this.setState({
       categories,
     });
-  }
+  };
 
   render() {
     const { categories } = this.state;
-    const { filterByCategory } = this.props;
+    const { filterByCategory, displayCategories, toggleCategories } = this.props;
 
     return (
-      <aside className="CategoriesList">
+      <aside
+        className={
+          displayCategories
+            ? 'CategoriesList'
+            : 'CategoriesList CategoriesList-hidden'
+        }
+      >
         <h2>Categorias</h2>
         <ul>
           {categories.map((item) => (
@@ -39,6 +45,7 @@ class CategoriesList extends Component {
                   name="categories"
                   value={ item.id }
                   onChange={ filterByCategory }
+                  onClick={ toggleCategories }
                 />
                 {item.name}
               </label>
@@ -52,6 +59,8 @@ class CategoriesList extends Component {
 
 CategoriesList.propTypes = {
   filterByCategory: PropTypes.func.isRequired,
+  displayCategories: PropTypes.bool.isRequired,
+  toggleCategories: PropTypes.func.isRequired,
 };
 
 export default CategoriesList;

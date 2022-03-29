@@ -85,10 +85,24 @@
   }
 }
 
+@media screen and ( max-width : 649px ) {
+
+  .SearchList {
+    margin-left: 0;
+  }
+
+  .SearchList-container-cards {
+    width: 100%;
+  }
+}
+
 @media screen and ( max-width : 1150px ) {
 
   .SearchList-container-cards {
-    align-items: stretch;
-    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 2rem;
   }
 }

@@ -30,39 +30,47 @@ class SearchList extends Component {
 
   handleQueryInput = ({ target }) => {
     const query = target.value;
-    this.setState({ query });
+    this.setState({ query }, this.fetchProducts);
   };
 
   filterByCategory = ({ target }) => {
     const categoryId = target.value;
-    this.setState({
-      categoryId,
-    }, this.fetchProducts);
+    this.setState(
+      {
+        categoryId,
+      },
+      this.fetchProducts,
+    );
   };
-
-  FilterByCategory =({ target }) => {
-    const categoryId = target.value;
-    this.setState({
-      categoryId,
-    });
-
-    this.fetchProducts();
-  }
 
   render() {
     const { productsList, query } = this.state;
-    const { handleAddCartToList, itemsQuantity } = this.props;
+    const {
+      handleAddCartToList,
+      itemsQuantity,
+      displayCategories,
+      toggleCategories,
+    } = this.props;
 
     return (
       <main className="pageContainer">
-        <CategoriesList filterByCategory={ this.filterByCategory } />
+        <CategoriesList
+          filterByCategory={ this.filterByCategory }
+          displayCategories={ displayCategories }
+          toggleCategories={ toggleCategories }
+        />
         <section className="SearchList">
-          <form className="SearchList-searchbar">
+          <div className="SearchList-searchbar">
             <input
               data-testid="query-input"
               type="text"
               value={ query }
               onChange={ this.handleQueryInput }
+              onKeyDown={ (e) => {
+                if (e.key === 'Enter') {
+                  this.fetchProducts();
+                }
+              } }
             />
             <button
               type="button"
@@ -72,9 +80,12 @@ class SearchList extends Component {
             >
               <FiSearch />
             </button>
-          </form>
+          </div>
           {Boolean(!productsList.length) && (
-            <p className="SearchList-search-message" data-testid="home-initial-message">
+            <p
+              className="SearchList-search-message"
+              data-testid="home-initial-message"
+            >
               Digite algum termo de pesquisa ou escolha uma categoria.
             </p>
           )}
@@ -109,6 +120,8 @@ class SearchList extends Component {
 SearchList.propTypes = {
   handleAddCartToList: PropTypes.func.isRequired,
   itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
+  displayCategories: PropTypes.bool.isRequired,
+  toggleCategories: PropTypes.func.isRequired,
 };
 
 export default SearchList;

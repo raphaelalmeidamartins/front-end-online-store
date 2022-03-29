@@ -49,3 +49,19 @@
   cursor: pointer;
 }
 
+@media screen and ( max-width : 649px ) {
+
+  .CategoriesList {
+    height: 100vh;
+    left: 0;
+    padding-top: 66px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 5;
+  }
+
+  .CategoriesList-hidden {
+    left: -100vw;
+  }
+}

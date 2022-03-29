@@ -29,6 +29,7 @@
 
 .Header-cart-icon {
   align-items: center;
+  background-color: transparent;
   color: var(--text-icons);
   cursor: pointer;
   display: flex;

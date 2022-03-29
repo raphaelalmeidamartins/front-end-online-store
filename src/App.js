@@ -15,6 +15,7 @@ class App extends Component {
     this.state = {
       cartList: [],
       itemsQuantity: {},
+      displayCategories: false,
     };
   }
 
@@ -73,8 +74,12 @@ class App extends Component {
     this.setState({ itemsQuantity });
   }
 
+  toggleCategories = () => {
+    this.setState((state) => ({ displayCategories: !state.displayCategories }));
+  }
+
   render() {
-    const { cartList, itemsQuantity } = this.state;
+    const { cartList, itemsQuantity, displayCategories } = this.state;
 
     return (
       <BrowserRouter>
@@ -85,6 +90,7 @@ class App extends Component {
                 acc += item;
                 return acc;
               }, 0) }
+            toggleCategories={ this.toggleCategories }
           />
         </Route>
         <Switch>
@@ -92,6 +98,8 @@ class App extends Component {
             <SearchList
               handleAddCartToList={ this.handleAddCartToList }
               itemsQuantity={ itemsQuantity }
+              displayCategories={ displayCategories }
+              toggleCategories={ this.toggleCategories }
             />
           </Route>
           <Route path="/shopping-cart">

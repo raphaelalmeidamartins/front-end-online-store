@@ -8,14 +8,18 @@ import './Header.css';
 
 class Header extends Component {
   render() {
-    const { itemsQuantity } = this.props;
+    const { itemsQuantity, toggleCategories } = this.props;
 
     return (
       <header className="Header">
         <div className="Header-container">
-          <div className="Header-cart-icon Header-cart-icon-category">
+          <button
+            type="button"
+            className="Header-cart-icon Header-cart-icon-category"
+            onClick={ toggleCategories }
+          >
             <BiCategory />
-          </div>
+          </button>
           <img className="Header-logo" src={ logo } alt="March 25th Online Store" />
           <Link data-testid="shopping-cart-button" to="/shopping-cart">
             <div className="Header-cart-icon">
@@ -35,6 +39,7 @@ class Header extends Component {
 
 Header.propTypes = {
   itemsQuantity: PropTypes.number.isRequired,
+  toggleCategories: PropTypes.func.isRequired,
 };
 
 export default Header;

@@ -74,3 +74,10 @@
     margin: 1.5rem 0;
   }
 }
+
+@media screen and ( max-width : 1150px ) {
+
+  .ProductCard {
+    width: 100%;
+  }
+}
