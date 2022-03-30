@@ -5,3 +5,7 @@
   padding: 20px;
   width: 100vw;
 }
+
+.ShoppingCart-items-list {
+  list-style-type: none;
+}

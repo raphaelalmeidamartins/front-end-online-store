@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { FaMinusSquare, FaPlusSquare, FaTrashAlt } from 'react-icons/fa';
+import './CartItem.css';
 
 class CartItem extends Component {
   constructor() {
@@ -18,8 +20,10 @@ class CartItem extends Component {
   decreaseQuantity = () => {
     const { id, handleDecrease } = this.props;
     const { quantity } = this.state;
-    if (quantity > 1) this.setState({ quantity: quantity - 1 }, handleDecrease(id));
-  }
+    if (quantity > 1) {
+      this.setState({ quantity: quantity - 1 }, handleDecrease(id));
+    }
+  };
 
   increaseQuantity = () => {
     const { id, handleIncrease } = this.props;
@@ -29,7 +33,7 @@ class CartItem extends Component {
     if (quantity < availableQuantity) {
       this.setState({ quantity: quantity + 1 }, handleIncrease(id));
     }
-  }
+  };
 
   render() {
     const { quantity } = this.state;
@@ -37,29 +41,48 @@ class CartItem extends Component {
 
     return (
       <li className="CartItem">
-        <button type="button">Remover</button>
-        <img src={ thumbnail } alt={ title } />
-        <span data-testid="shopping-cart-product-name">{title}</span>
-        <div>
+        <button type="button" className="CartItem-icon">
+          <span>
+            <FaTrashAlt />
+          </span>
+        </button>
+        <img src={ thumbnail } alt={ title } className="CartItem-image" />
+        <span
+          className="CartItem-title"
+          data-testid="shopping-cart-product-name"
+        >
+          {title}
+        </span>
+        <div className="CartItem-container-quantity">
           <button
             type="button"
+            className="CartItem-icon"
             data-testid="product-decrease-quantity"
             onClick={ () => this.decreaseQuantity() }
           >
-            -
+            <span>
+              <FaMinusSquare />
+            </span>
           </button>
-          <span data-testid="shopping-cart-product-quantity">{quantity}</span>
+          <span
+            className="CartItem-quantity"
+            data-testid="shopping-cart-product-quantity"
+          >
+            {quantity}
+          </span>
           <button
             type="button"
+            className="CartItem-icon"
             data-testid="product-increase-quantity"
             onClick={ () => this.increaseQuantity() }
           >
-            +
+            <span>
+              <FaPlusSquare />
+            </span>
           </button>
         </div>
-        <span>{`R$ ${price}`}</span>
+        <span className="CartItem-price">{`R$ ${price}`}</span>
       </li>
-
     );
   }
 }

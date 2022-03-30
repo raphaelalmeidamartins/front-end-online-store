@@ -30,7 +30,7 @@ class ShoppingCart extends React.Component {
             Seu carrinho está vazio
           </p>
         ) : (
-          <ul>
+          <ul className="ShoppingCart-items-list">
             {Object.keys(itemsQuantity).map((productId) => (
               <CartItem
                 key={ productId }
