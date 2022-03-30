@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
+import './ShoppingCart.css';
 
 class ShoppingCart extends React.Component {
   constructor() {
@@ -23,7 +24,7 @@ class ShoppingCart extends React.Component {
     const { handleIncrease, handleDecrease } = this.props;
 
     return (
-      <section className="ShoppingCart">
+      <main className="ShoppingCart">
         {!cartList.length ? (
           <p data-testid="shopping-cart-empty-message">
             Seu carrinho está vazio
@@ -42,7 +43,7 @@ class ShoppingCart extends React.Component {
           </ul>
         )}
         <Link data-testid="checkout-products" to="/checkout">Finalizar Compra</Link>
-      </section>
+      </main>
     );
   }
 }

@@ -1,3 +1,7 @@
-.ListCategories {
+.ShoppingCart {
   border: 1px solid black;
+  height: 100vh;
+  max-width: 900px;
+  padding: 20px;
+  width: 100vw;
 }
