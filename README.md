@@ -10,7 +10,7 @@ We had to develop a Online Store React application fetching for products data fr
 
 ### Note
 
-this project is still under development. I am implementing the layout and refactoring the code.
+this project is still under development. I am implementing the layout and refactoring the code. I haven't deployed the application yet.
 
 ### In progress
 
