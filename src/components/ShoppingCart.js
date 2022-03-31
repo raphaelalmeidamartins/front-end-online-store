@@ -4,13 +4,7 @@ import CartItem from './CartItem';
 import './ShoppingCart.css';
 
 class ShoppingCart extends React.Component {
-  constructor() {
-    super();
-
-    this.handleCheckout = this.handleCheckout.bind(this);
-  }
-
-  handleCheckout() {
+  handleCheckout = () => {
     const { history } = this.props;
     history.push('/checkout');
   }
@@ -21,6 +15,7 @@ class ShoppingCart extends React.Component {
       itemsQuantity,
       handleIncrease,
       handleDecrease,
+      handleRemoveItem,
     } = this.props;
 
     return (
@@ -40,6 +35,7 @@ class ShoppingCart extends React.Component {
                   quantity={ itemsQuantity[productId] }
                   handleDecrease={ handleDecrease }
                   handleIncrease={ handleIncrease }
+                  handleRemoveItem={ handleRemoveItem }
                 />
               ))}
           </ul>
@@ -79,6 +75,7 @@ ShoppingCart.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  handleRemoveItem: PropTypes.func.isRequired,
 };
 
 export default ShoppingCart;

@@ -11,6 +11,7 @@ class AddToCartButton extends Component {
       productObj,
       dataTestId,
     } = this.props;
+
     return (
       <button
         type="button"

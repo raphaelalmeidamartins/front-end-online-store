@@ -58,6 +58,17 @@ class App extends Component {
     this.setState({ cartList: [...updatedList, currItem] }, this.updateQuantity);
   }
 
+  handleRemoveItem = (productId) => {
+    const { cartList } = this.state;
+    const updatedList = [...cartList].reduce((acc, item) => {
+      if (item.id !== productId) {
+        return [...acc, item];
+      }
+      return acc;
+    }, []);
+    this.setState({ cartList: updatedList }, this.updateQuantity);
+  }
+
   updateQuantity = () => {
     const { cartList } = this.state;
     const cartItems = [...new Set(cartList)];
@@ -111,6 +122,7 @@ class App extends Component {
                 itemsQuantity={ itemsQuantity }
                 handleDecrease={ this.handleDecrease }
                 handleIncrease={ this.handleIncrease }
+                handleRemoveItem={ this.handleRemoveItem }
               />
             ) }
           />

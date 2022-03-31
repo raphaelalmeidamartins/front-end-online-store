@@ -44,6 +44,10 @@
   filter: brightness(80%);
 }
 
+.CartItem-icon:disabled {
+  opacity: 0.5;
+}
+
 .CartItem-icon span {
   align-items: center;
   display: flex;
@@ -79,6 +83,7 @@
 
 .CartItem-container-quantity {
   align-items: center;
+  background-color: white;
   border: 1px solid var(--secondary-text);
   border-radius: 10px;
   color: var(--secondary-text);

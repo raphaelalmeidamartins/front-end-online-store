@@ -37,7 +37,9 @@ class CartItem extends Component {
 
   render() {
     const { quantity } = this.state;
-    const { title, thumbnail, price } = this.props;
+    const { props } = this;
+    const { id, title, thumbnail, price, handleRemoveItem } = props;
+    const availableQuantity = props.available_quantity;
 
     return (
       <li className="CartItem">
@@ -55,7 +57,11 @@ class CartItem extends Component {
           </span>
         </div>
         <div className="CartItem-panel-quantity">
-          <button type="button" className="CartItem-remove-item-button">
+          <button
+            type="button"
+            className="CartItem-remove-item-button"
+            onClick={ () => handleRemoveItem(id) }
+          >
             <span>Remover</span>
           </button>
           <div className="CartItem-container-quantity">
@@ -81,6 +87,7 @@ class CartItem extends Component {
               className="CartItem-icon"
               data-testid="product-increase-quantity"
               onClick={ () => this.increaseQuantity() }
+              disabled={ quantity === availableQuantity }
             >
               <span>
                 {/* eslint-disable-next-line react/jsx-max-depth */}
@@ -103,6 +110,7 @@ CartItem.propTypes = {
   handleDecrease: PropTypes.func.isRequired,
   handleIncrease: PropTypes.func.isRequired,
   available_quantity: PropTypes.number.isRequired,
+  handleRemoveItem: PropTypes.func.isRequired,
 };
 
 export default CartItem;
