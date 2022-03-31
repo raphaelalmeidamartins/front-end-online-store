@@ -14,7 +14,7 @@ class AddToCartButton extends Component {
     return (
       <button
         type="button"
-        className="ProductCard-Button"
+        className="AddToCartButton"
         data-testid={ dataTestId }
         onClick={ () => handleAddCartToList(productId, productList, productObj) }
       >

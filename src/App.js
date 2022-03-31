@@ -102,14 +102,18 @@ class App extends Component {
               toggleCategories={ this.toggleCategories }
             />
           </Route>
-          <Route path="/shopping-cart">
-            <ShoppingCart
-              cartList={ cartList }
-              itemsQuantity={ itemsQuantity }
-              handleDecrease={ this.handleDecrease }
-              handleIncrease={ this.handleIncrease }
-            />
-          </Route>
+          <Route
+            path="/shopping-cart"
+            render={ (props) => (
+              <ShoppingCart
+                { ...props }
+                cartList={ cartList }
+                itemsQuantity={ itemsQuantity }
+                handleDecrease={ this.handleDecrease }
+                handleIncrease={ this.handleIncrease }
+              />
+            ) }
+          />
           <Route
             exact
             path="/product/:id"

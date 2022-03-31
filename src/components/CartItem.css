@@ -1,29 +1,47 @@
 .CartItem {
   align-items: center;
-  /* border: 1px solid black; */
+  border-bottom: 1px solid var(--divider-color);
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
+.CartItem:first-child {
+  border-top: 1px solid var(--divider-color);
+}
+
+
+.CartItem-container-item {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 2;
+  width: 620px;
+}
+
+
 .CartItem-image {
-  /* border: 1px solid black; */
-  margin: 0 1.5rem;
+  height: 92px;
+  margin-right: 1.5rem;
+  object-fit: contain;
+  width: 92px;
 }
 
 .CartItem-title {
-  /* border: 1px solid black; */
-  width: 320px;
+  flex-basis: 320px;
+  margin-right: 2rem;
+  max-width: 320px;
 }
 
 .CartItem-icon {
   background-color: transparent;
-  color: var(--text-icons);
+  color: var(--secondary-text);
   cursor: pointer;
-  /* border: 1px solid black; */
 }
 
 .CartItem-icon:hover {
-  filter: brightness(300%);
+  filter: brightness(80%);
 }
 
 .CartItem-icon span {
@@ -34,16 +52,56 @@
   padding: 0.2rem;
 }
 
+.CartItem-price {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  font-weight: 500;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.CartItem-remove-item-button {
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: 200ms;
+}
+
+.CartItem-panel-quantity {
+  align-items: center;
+  display: flex;
+  flex-grow: 2;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
 .CartItem-container-quantity {
   align-items: center;
-  /* border: 1px solid black; */
+  border: 1px solid var(--secondary-text);
+  border-radius: 10px;
+  color: var(--secondary-text);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 0 1.5rem;
-  width: 120px;
+  width: 100px;
 }
 
-.CartItem-price {
-  /* border: 1px solid black; */
+@media screen and ( max-width : 490px ) {
+
+  .CartItem-image {
+    height: 50px;
+    margin-right: 1rem;
+    object-fit: contain;
+    width: 50px;
+  }
+
+  .CartItem-title {
+    font-size: 0.9rem;
+  }
+
+  .CartItem-panel-quantity {
+    justify-content: flex-end;
+  }
 }

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
 import './ShoppingCart.css';
 
@@ -8,20 +7,21 @@ class ShoppingCart extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      cartList: [],
-      itemsQuantity: {},
-    };
+    this.handleCheckout = this.handleCheckout.bind(this);
   }
 
-  componentDidMount() {
-    const { cartList, itemsQuantity } = this.props;
-    this.setState({ cartList, itemsQuantity });
+  handleCheckout() {
+    const { history } = this.props;
+    history.push('/checkout');
   }
 
   render() {
-    const { cartList, itemsQuantity } = this.state;
-    const { handleIncrease, handleDecrease } = this.props;
+    const {
+      cartList,
+      itemsQuantity,
+      handleIncrease,
+      handleDecrease,
+    } = this.props;
 
     return (
       <main className="ShoppingCart">
@@ -31,18 +31,37 @@ class ShoppingCart extends React.Component {
           </p>
         ) : (
           <ul className="ShoppingCart-items-list">
-            {Object.keys(itemsQuantity).map((productId) => (
-              <CartItem
-                key={ productId }
-                { ...cartList.find((item) => item.id === productId) }
-                quantity={ itemsQuantity[productId] }
-                handleDecrease={ handleDecrease }
-                handleIncrease={ handleIncrease }
-              />
-            ))}
+            {Object.keys(itemsQuantity)
+              .sort()
+              .map((productId) => (
+                <CartItem
+                  key={ productId }
+                  { ...cartList.find((item) => item.id === productId) }
+                  quantity={ itemsQuantity[productId] }
+                  handleDecrease={ handleDecrease }
+                  handleIncrease={ handleIncrease }
+                />
+              ))}
           </ul>
         )}
-        <Link data-testid="checkout-products" to="/checkout">Finalizar Compra</Link>
+        <section className="ShoppingCart-checkout">
+          <span className="ShoppingCart-total">
+            <span className="ShoppingCart-total-label">Total:</span>
+            <span className="ShoppingCart-total-value">
+              <span>R$</span>
+              <span>
+                {cartList.reduce((acc, item) => acc + item.price, 0).toFixed(2)}
+              </span>
+            </span>
+          </span>
+          <button
+            type="button"
+            className="ShoppingCart-checkout-button"
+            onClick={ this.handleCheckout }
+          >
+            Finalizar Compra
+          </button>
+        </section>
       </main>
     );
   }
@@ -57,6 +76,9 @@ ShoppingCart.propTypes = {
   itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
   handleDecrease: PropTypes.func.isRequired,
   handleIncrease: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default ShoppingCart;

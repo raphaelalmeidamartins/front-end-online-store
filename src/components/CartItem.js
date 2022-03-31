@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { FaMinusSquare, FaPlusSquare, FaTrashAlt } from 'react-icons/fa';
+import { BiMinus, BiPlus } from 'react-icons/bi';
 import './CartItem.css';
 
 class CartItem extends Component {
@@ -41,47 +41,54 @@ class CartItem extends Component {
 
     return (
       <li className="CartItem">
-        <button type="button" className="CartItem-icon">
-          <span>
-            <FaTrashAlt />
+        <div className="CartItem-container-item">
+          <img src={ thumbnail } alt={ title } className="CartItem-image" />
+          <p
+            className="CartItem-title"
+            data-testid="shopping-cart-product-name"
+          >
+            {title}
+          </p>
+          <span className="CartItem-price">
+            <span>R$</span>
+            <span>{(price * quantity).toFixed(2)}</span>
           </span>
-        </button>
-        <img src={ thumbnail } alt={ title } className="CartItem-image" />
-        <span
-          className="CartItem-title"
-          data-testid="shopping-cart-product-name"
-        >
-          {title}
-        </span>
-        <div className="CartItem-container-quantity">
-          <button
-            type="button"
-            className="CartItem-icon"
-            data-testid="product-decrease-quantity"
-            onClick={ () => this.decreaseQuantity() }
-          >
-            <span>
-              <FaMinusSquare />
-            </span>
-          </button>
-          <span
-            className="CartItem-quantity"
-            data-testid="shopping-cart-product-quantity"
-          >
-            {quantity}
-          </span>
-          <button
-            type="button"
-            className="CartItem-icon"
-            data-testid="product-increase-quantity"
-            onClick={ () => this.increaseQuantity() }
-          >
-            <span>
-              <FaPlusSquare />
-            </span>
-          </button>
         </div>
-        <span className="CartItem-price">{`R$ ${price}`}</span>
+        <div className="CartItem-panel-quantity">
+          <button type="button" className="CartItem-remove-item-button">
+            <span>Remover</span>
+          </button>
+          <div className="CartItem-container-quantity">
+            <button
+              type="button"
+              className="CartItem-icon"
+              data-testid="product-decrease-quantity"
+              onClick={ () => this.decreaseQuantity() }
+            >
+              <span>
+                {/* eslint-disable-next-line react/jsx-max-depth */}
+                <BiMinus />
+              </span>
+            </button>
+            <span
+              className="CartItem-quantity"
+              data-testid="shopping-cart-product-quantity"
+            >
+              {quantity}
+            </span>
+            <button
+              type="button"
+              className="CartItem-icon"
+              data-testid="product-increase-quantity"
+              onClick={ () => this.increaseQuantity() }
+            >
+              <span>
+                {/* eslint-disable-next-line react/jsx-max-depth */}
+                <BiPlus />
+              </span>
+            </button>
+          </div>
+        </div>
       </li>
     );
   }
