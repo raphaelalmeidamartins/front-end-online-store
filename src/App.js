@@ -94,16 +94,20 @@ class App extends Component {
 
     return (
       <HashRouter>
-        <Route path="/">
-          <Header
-            itemsQuantity={ Object.values(itemsQuantity)
-              .reduce((acc, item) => {
-                acc += item;
-                return acc;
-              }, 0) }
-            toggleCategories={ this.toggleCategories }
-          />
-        </Route>
+        <Route
+          path="/"
+          render={ (props) => (
+            <Header
+              itemsQuantity={ Object.values(itemsQuantity)
+                .reduce((acc, item) => {
+                  acc += item;
+                  return acc;
+                }, 0) }
+              toggleCategories={ this.toggleCategories }
+              { ...props }
+            />
+          ) }
+        />
         <Switch>
           <Route exact path="/">
             <SearchList
