@@ -24,7 +24,7 @@
 
 .Header-logo {
   object-fit: contain;
-  width: 150px;
+  width: 130px;
 }
 
 .Header-cart-icon {
@@ -56,6 +56,14 @@
   right: 0;
   top: 0;
   width: 20px;
+}
+
+@media screen and ( min-width : 375px ) {
+
+  .Header-logo {
+    margin-left: 1rem;
+    width: 150px;
+  }
 }
 
 @media screen and ( min-width : 650px ) {
