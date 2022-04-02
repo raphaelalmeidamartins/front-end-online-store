@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Checkout from './components/Checkout';
 import Header from './components/Header';
@@ -93,7 +93,7 @@ class App extends Component {
     const { cartList, itemsQuantity, displayCategories } = this.state;
 
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Route path="/">
           <Header
             itemsQuantity={ Object.values(itemsQuantity)
@@ -142,7 +142,7 @@ class App extends Component {
             />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
