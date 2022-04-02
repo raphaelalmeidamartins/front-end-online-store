@@ -70,3 +70,10 @@
   background-color: red;
   color: white;
 }
+
+@media screen and ( max-width : 400px ) {
+
+  .Checkout label {
+    width: 100%;
+  }
+}
