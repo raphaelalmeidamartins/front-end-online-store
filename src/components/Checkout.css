@@ -3,7 +3,7 @@
   display: flex;
   flex-flow: column nowrap;
   margin-top: 100px;
-  max-width: 900px;
+  max-width: 650px;
   padding: 1.5rem;
   width: 100vw;
 }
@@ -38,6 +38,22 @@
   flex-grow: 1;
 }
 
+.Checkout-payment {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 300px;
+}
+
+.Checkout-payment label {
+  display: flex;
+  width: fit-content;
+}
+
+.Checkout-payment input {
+  margin-right: 0.5rem;
+  width: fit-content;
+}
+
 .Checkout label:not( :last-child ) {
   margin-right: 0.5rem;
 }
@@ -53,6 +69,7 @@
 .Checkout-label-province, .Checkout-label-number {
   width: 70px;
 }
+
 
 .Checkout button {
   background-color: transparent;

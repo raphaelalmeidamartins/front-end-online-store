@@ -96,6 +96,21 @@ class Checkout extends Component {
               />
             </label>
           </div>
+          <h2>Método de pagamento</h2>
+          <div className="Checkout-payment">
+            <label htmlFor="boleto">
+              <input id="boleto" type="radio" name="payment-method" />
+              Boleto
+            </label>
+            <label htmlFor="visa">
+              <input id="visa" type="radio" name="payment-method" />
+              Crédito
+            </label>
+            <label htmlFor="mastercard">
+              <input id="mastercard" type="radio" name="payment-method" />
+              Pix
+            </label>
+          </div>
           <button type="button">Finalizar Compra</button>
         </form>
       </section>
