@@ -102,15 +102,23 @@ class CartItem extends Component {
 }
 
 CartItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  thumbnail: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  thumbnail: PropTypes.string,
+  price: PropTypes.number,
   quantity: PropTypes.number.isRequired,
+  available_quantity: PropTypes.number,
   handleDecrease: PropTypes.func.isRequired,
   handleIncrease: PropTypes.func.isRequired,
-  available_quantity: PropTypes.number.isRequired,
   handleRemoveItem: PropTypes.func.isRequired,
+};
+
+CartItem.defaultProps = {
+  id: '',
+  title: '',
+  thumbnail: '',
+  price: 0,
+  available_quantity: 0,
 };
 
 export default CartItem;

@@ -1,3 +1,46 @@
 .Checkout {
-  border: 1px solid black;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 100px;
+  max-width: 900px;
+  padding: 1.5rem;
+  width: 100vw;
+}
+
+.Checkout h2 {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.Checkout form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.Checkout input {
+  border: 1px solid var(--divider-color);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+
+.Checkout label:not( :last-child ) {
+  margin-bottom: 1rem;
+}
+
+.Checkout button {
+  background-color: transparent;
+  border: 1px solid red;
+  border-radius: 10px;
+  color: red;
+  cursor: pointer;
+  display: flex;
+  font: 600;
+  justify-content: center;
+  max-width: 450px;
+  padding: 10px 15px;
+}
+
+.Checkout button:hover {
+  background-color: red;
+  color: white;
 }

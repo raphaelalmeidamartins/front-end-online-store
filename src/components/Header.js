@@ -12,6 +12,7 @@ class Header extends Component {
     const {
       itemsQuantity,
       toggleCategories,
+      displayCategories,
       history,
       history: {
         location: { pathname },
@@ -27,7 +28,7 @@ class Header extends Component {
               className="Header-cart-icon Header-cart-icon-category"
               onClick={ toggleCategories }
             >
-              <BiCategory />
+              { displayCategories ? <TiArrowBackOutline /> : <BiCategory />}
             </button>)}
           { pathname !== '/' && (
             <button
@@ -57,6 +58,7 @@ class Header extends Component {
 Header.propTypes = {
   itemsQuantity: PropTypes.number.isRequired,
   toggleCategories: PropTypes.func.isRequired,
+  displayCategories: PropTypes.bool.isRequired,
   history: PropTypes.shape({
     location: PropTypes.shape({
       pathname: PropTypes.string.isRequired,

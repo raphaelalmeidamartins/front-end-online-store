@@ -54,6 +54,7 @@ class ShoppingCart extends React.Component {
             type="button"
             className="ShoppingCart-checkout-button"
             onClick={ this.handleCheckout }
+            disabled={ cartList.length === 0 }
           >
             Finalizar Compra
           </button>

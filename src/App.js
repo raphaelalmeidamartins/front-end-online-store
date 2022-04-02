@@ -105,6 +105,7 @@ class App extends Component {
                 }, 0) }
               toggleCategories={ this.toggleCategories }
               { ...props }
+              displayCategories={ displayCategories }
             />
           ) }
         />
