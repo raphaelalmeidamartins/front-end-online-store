@@ -144,6 +144,7 @@ class App extends Component {
           <Route path="/checkout">
             <Checkout
               itemsQuantity={ itemsQuantity }
+              cartList={ cartList }
             />
           </Route>
         </Switch>

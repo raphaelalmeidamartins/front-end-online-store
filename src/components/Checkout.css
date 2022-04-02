@@ -1,4 +1,5 @@
 .Checkout {
+  align-items: center;
   display: flex;
   flex-flow: column nowrap;
   margin-top: 100px;
@@ -15,16 +16,42 @@
 .Checkout form {
   display: flex;
   flex-flow: column nowrap;
+  max-width: 700px;
+  width: 100%;
 }
 
-.Checkout input {
+.Checkout input, .Checkout select {
   border: 1px solid var(--divider-color);
   border-radius: 10px;
   padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.Checkout div {
+  display: flex;
+  justify-content: stretch;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.Checkout label {
+  flex-grow: 1;
 }
 
 .Checkout label:not( :last-child ) {
-  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+}
+
+.Checkout label select {
+  flex-shrink: 0;
+}
+
+.Checkout-label-cpf, .Checkout-label-phone, .Checkout-label-city {
+  width: 90px;
+}
+
+.Checkout-label-province, .Checkout-label-number {
+  width: 70px;
 }
 
 .Checkout button {
@@ -36,7 +63,6 @@
   display: flex;
   font: 600;
   justify-content: center;
-  max-width: 450px;
   padding: 10px 15px;
 }
 
