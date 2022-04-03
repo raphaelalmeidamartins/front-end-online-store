@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ProductPageCarousel from './ProductPageCarousel';
+import React, { Component } from 'react';
 import { getProductById } from '../services/api';
 import AddToCartButton from './AddToCartButton';
 import FreeShipping from './FreeShipping';
 import './ProductPage.css';
+import ProductPageCarousel from './ProductPageCarousel';
 import ProductReviews from './ProductReviews';
 
 class ProductPage extends Component {
@@ -14,6 +14,7 @@ class ProductPage extends Component {
       shipping: {},
       attributes: [],
       pictures: [{ url: '' }],
+      price: 0,
     };
   }
 
@@ -27,7 +28,7 @@ class ProductPage extends Component {
     } = this.props;
     const product = await getProductById(params.id);
     this.setState({ ...product });
-  }
+  };
 
   render() {
     const { title, price, attributes, pictures } = this.state;
@@ -38,11 +39,20 @@ class ProductPage extends Component {
     return (
       <main className="ProductPage">
         <section className="ProductPage-details">
+          <h2 className="ProductPage-title">{title}</h2>
           <ProductPageCarousel pictures={ pictures } />
+          <div className="ProductPage-price-container">
+            <p className="ProductPage-price">
+              <span className="ProductPage-price-symbol">R$</span>
+              {`${price.toFixed(2)}`}
+            </p>
+            <AddToCartButton
+              handleAddCartToList={ handleAddCartToList }
+              productObj={ this.state }
+            />
+          </div>
+          {freeShipping && <FreeShipping />}
           <div className="ProductPage-info">
-            <h2>{title}</h2>
-            {freeShipping && <FreeShipping />}
-            <p>{`R$ ${price}`}</p>
             <ul>
               {attributes.map((attr) => (
                 <li key={ attr.id }>
@@ -53,10 +63,6 @@ class ProductPage extends Component {
                 </li>
               ))}
             </ul>
-            <AddToCartButton
-              handleAddCartToList={ handleAddCartToList }
-              productObj={ this.state }
-            />
           </div>
         </section>
         <ProductReviews { ...this.props } />

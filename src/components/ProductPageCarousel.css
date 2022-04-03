@@ -1,7 +1,20 @@
 .Carousel-item {
-  background-color: red;
   color: white;
-  height: 200px;
-  margin: 0 20px;
+  height: 40%;
   width: 100%;
+}
+
+.Carousel-item img {
+  background-color: white;
+  height: 300px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.rec.rec-arrow {
+  border-radius: 0;
+}
+
+.rec-pagination {
+  visibility: hidden;
 }

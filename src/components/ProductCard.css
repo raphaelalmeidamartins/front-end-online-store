@@ -1,3 +1,8 @@
+.ProductCard .AddToCartButton {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
 .ProductCard {
   background-color: white;
   border: 1px solid var(--divider-color);

@@ -1,12 +1,10 @@
 .AddToCartButton {
-  align-self: flex-end;
   background-color: var(--accent-color);
   border-radius: 10px;
   color: var(--white);
   cursor: pointer;
   display: flex;
   font: 600;
-  margin-top: 1rem;
   padding: 10px 15px;
   width: fit-content;
 }

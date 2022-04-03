@@ -4,8 +4,6 @@ import Carousel from 'react-elastic-carousel';
 import './ProductPageCarousel.css';
 
 class ProductPageCarousel extends Component {
-  state = { }
-
   render() {
     const { pictures } = this.props;
 
