@@ -27,7 +27,7 @@ This project is still under development. I am implementing the layout and refact
 
 ## :man_technologist: Developed Skills
 
-* Work in group using agile development methologies
+* Work in group using agile development methodologies
 * Develop a React application using React Router
 * Fetch data from a public API
 
