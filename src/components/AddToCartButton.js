@@ -9,14 +9,12 @@ class AddToCartButton extends Component {
       productId,
       productList,
       productObj,
-      dataTestId,
     } = this.props;
 
     return (
       <button
         type="button"
         className="AddToCartButton"
-        data-testid={ dataTestId }
         onClick={ () => handleAddCartToList(productId, productList, productObj) }
       >
         Adicionar ao carrinho
@@ -36,7 +34,6 @@ AddToCartButton.propTypes = {
   productId: PropTypes.string,
   productList: PropTypes.arrayOf(PropTypes.object),
   productObj: PropTypes.objectOf(PropTypes.any),
-  dataTestId: PropTypes.string.isRequired,
 };
 
 export default AddToCartButton;

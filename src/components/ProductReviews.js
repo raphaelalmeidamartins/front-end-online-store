@@ -71,7 +71,6 @@ class ProductsDetails extends React.Component {
                 type="email"
                 value={ email }
                 placeholder="Email"
-                data-testid="product-detail-email"
                 onChange={ this.handleChange }
               />
             </label>
@@ -83,7 +82,6 @@ class ProductsDetails extends React.Component {
                     <input
                       type="radio"
                       name="index"
-                      data-testid={ `${index}-rating` }
                       value={ index }
                       onChange={ this.handleChange }
                     />
@@ -94,7 +92,6 @@ class ProductsDetails extends React.Component {
           </section>
           <label htmlFor="message">
             <textarea
-              data-testid="product-detail-evaluation"
               value={ message }
               name="message"
               placeholder="Mensagem (opcional)"
@@ -103,7 +100,6 @@ class ProductsDetails extends React.Component {
           </label>
           <button
             type="button"
-            data-testid="submit-review-btn"
             onClick={ this.handleSubmit }
           >
             Avaliar

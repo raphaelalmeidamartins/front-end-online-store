@@ -5,7 +5,7 @@ import './FreeShipping.css';
 class FreeShipping extends Component {
   render() {
     return (
-      <span className="FreeShipping" data-testid="free-shipping">
+      <span className="FreeShipping">
         Frete Grátis
         <div className="FreeShipping-icon">
           <GiCardboardBoxClosed />

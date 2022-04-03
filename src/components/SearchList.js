@@ -63,7 +63,6 @@ class SearchList extends Component {
         <section className="SearchList">
           <div className="SearchList-searchbar">
             <input
-              data-testid="query-input"
               type="text"
               value={ query }
               onChange={ this.handleQueryInput }
@@ -75,7 +74,6 @@ class SearchList extends Component {
             />
             <button
               type="button"
-              data-testid="query-button"
               onClick={ this.fetchProducts }
               className="SearchList-searchbar-button"
             >
@@ -85,7 +83,6 @@ class SearchList extends Component {
           {Boolean(!productsList.length) && (
             <p
               className="SearchList-search-message"
-              data-testid="home-initial-message"
             >
               Digite algum termo de pesquisa ou escolha uma categoria.
             </p>

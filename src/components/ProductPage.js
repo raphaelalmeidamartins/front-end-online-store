@@ -29,12 +29,11 @@ class ProductPage extends Component {
       <div>
         <section>
           {freeShipping && <FreeShipping />}
-          <h2 data-testid="product-detail-name">{title}</h2>
+          <h2>{title}</h2>
           <img src={ thumbnail } alt={ title } />
           <p>{`R$ ${price}`}</p>
           <AddToCartButton
             handleAddCartToList={ handleAddCartToList }
-            dataTestId="product-detail-add-to-cart"
             productObj={ this.state }
           />
         </section>

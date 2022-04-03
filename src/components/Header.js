@@ -39,12 +39,12 @@ class Header extends Component {
               <TiArrowBackOutline />
             </button>)}
           <img className="Header-logo" src={ logo } alt="March 25th Online Store" />
-          <Link data-testid="shopping-cart-button" to="/shopping-cart">
+          <Link to="/shopping-cart">
             <div className="Header-cart-icon">
               <RiShoppingCartFill />
             </div>
             <div className="Header-cart-quantity">
-              <span data-testid="shopping-cart-size">
+              <span>
                 {itemsQuantity}
               </span>
             </div>

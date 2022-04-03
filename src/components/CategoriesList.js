@@ -42,7 +42,7 @@ class CategoriesList extends Component {
         <h2>Categorias</h2>
         <ul>
           {categories.map((item) => (
-            <li key={ item.id } data-testid="category">
+            <li key={ item.id }>
               <label
                 htmlFor={ item.id }
                 className={

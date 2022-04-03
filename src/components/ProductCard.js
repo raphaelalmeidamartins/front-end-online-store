@@ -20,8 +20,8 @@ class ProductCard extends Component {
     } = this.props;
 
     return (
-      <section className="ProductCard" data-testid="product">
-        <Link data-testid="product-detail-link" to={ `/product/${productId}` }>
+      <section className="ProductCard">
+        <Link to={ `/product/${productId}` }>
           <div className="ProductCard-Image">
             <img src={ image } alt={ title } />
           </div>
@@ -37,7 +37,6 @@ class ProductCard extends Component {
         <AddToCartButton
           handleAddCartToList={ handleAddCartToList }
           productId={ productId }
-          dataTestId="product-add-to-cart"
           productList={ productList }
           itemsQuantity={ itemsQuantity }
           availableQuantity={ availableQuantity }

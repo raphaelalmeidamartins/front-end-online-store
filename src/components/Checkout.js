@@ -26,7 +26,6 @@ class Checkout extends Component {
                 <label htmlFor="fullName" className="Checkout-label-fullName">
                   <input
                     type="text"
-                    data-testid="checkout-fullname"
                     placeholder="Nome Completo"
                     name="fullName"
                     id="fullName"
@@ -35,7 +34,6 @@ class Checkout extends Component {
                 <label htmlFor="cpf" className="Checkout-label-cpf">
                   <input
                     type="text"
-                    data-testid="checkout-cpf"
                     placeholder="CPF"
                     name="cpf"
                     id="cpf"
@@ -57,7 +55,6 @@ class Checkout extends Component {
                 <label htmlFor="phone" className="Checkout-label-phone">
                   <input
                     type="text"
-                    data-testid="checkout-phone"
                     placeholder="Telefone"
                     name="phone"
                     id="phone"
@@ -68,7 +65,6 @@ class Checkout extends Component {
                 <label htmlFor="cep" className="Checkout-label-cep">
                   <input
                     type="text"
-                    data-testid="checkout-cep"
                     placeholder="CEP"
                     name="cep"
                     id="cep"

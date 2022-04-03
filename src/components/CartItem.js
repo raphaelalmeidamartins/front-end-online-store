@@ -47,7 +47,6 @@ class CartItem extends Component {
           <img src={ thumbnail } alt={ title } className="CartItem-image" />
           <p
             className="CartItem-title"
-            data-testid="shopping-cart-product-name"
           >
             {title}
           </p>
@@ -68,7 +67,6 @@ class CartItem extends Component {
             <button
               type="button"
               className="CartItem-icon"
-              data-testid="product-decrease-quantity"
               onClick={ () => this.decreaseQuantity() }
             >
               <span>
@@ -78,14 +76,12 @@ class CartItem extends Component {
             </button>
             <span
               className="CartItem-quantity"
-              data-testid="shopping-cart-product-quantity"
             >
               {quantity}
             </span>
             <button
               type="button"
               className="CartItem-icon"
-              data-testid="product-increase-quantity"
               onClick={ () => this.increaseQuantity() }
               disabled={ quantity === availableQuantity }
             >
