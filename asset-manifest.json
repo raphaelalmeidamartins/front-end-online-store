@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/front-end-online-store/static/css/main.6bd923a1.css",
+    "main.js": "/front-end-online-store/static/js/main.550ef6a2.js",
+    "static/media/logo-normal.png": "/front-end-online-store/static/media/logo-normal.cc8b796fa938a02f0543.png",
+    "index.html": "/front-end-online-store/index.html",
+    "main.6bd923a1.css.map": "/front-end-online-store/static/css/main.6bd923a1.css.map",
+    "main.550ef6a2.js.map": "/front-end-online-store/static/js/main.550ef6a2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6bd923a1.css",
+    "static/js/main.550ef6a2.js"
+  ]
+}
