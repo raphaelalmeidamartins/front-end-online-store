@@ -39,6 +39,8 @@ body {
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 code {

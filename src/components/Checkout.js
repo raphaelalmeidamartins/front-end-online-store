@@ -15,7 +15,10 @@ class Checkout extends Component {
           <>
             <section className="Checkout-products">
               <h2>Revise seus itens</h2>
-              <CheckoutTable cartList={ cartList } itemsQuantity={ itemsQuantity } />
+              <CheckoutTable
+                cartList={ cartList }
+                itemsQuantity={ itemsQuantity }
+              />
             </section>
             <form>
               <h2>Informações do Comprador</h2>
@@ -40,7 +43,10 @@ class Checkout extends Component {
                 </label>
               </div>
               <div>
-                <label htmlFor="checkout-email" className="Checkout-label-email">
+                <label
+                  htmlFor="checkout-email"
+                  className="Checkout-label-email"
+                >
                   <input
                     type="email"
                     placeholder="Email"
@@ -69,7 +75,12 @@ class Checkout extends Component {
                   />
                 </label>
                 <label htmlFor="city" className="Checkout-label-city">
-                  <input type="text" placeholder="Cidade" name="city" id="city" />
+                  <input
+                    type="text"
+                    placeholder="Cidade"
+                    name="city"
+                    id="city"
+                  />
                 </label>
                 <label htmlFor="province" className="Checkout-label-province">
                   <select placeholder="UF" name="province" id="province">
@@ -98,7 +109,10 @@ class Checkout extends Component {
                 </label>
               </div>
               <div>
-                <label htmlFor="complement" className="Checkout-label-complement">
+                <label
+                  htmlFor="complement"
+                  className="Checkout-label-complement"
+                >
                   <input
                     type="text"
                     placeholder="Complemento"
