@@ -142,7 +142,13 @@ class Checkout extends Component {
 }
 
 Checkout.propTypes = {
-  cartList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  cartList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.number,
+    PropTypes.bool,
+    PropTypes.objectOf(PropTypes.any),
+  ]))).isRequired,
   itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 

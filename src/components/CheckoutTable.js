@@ -1,7 +1,7 @@
+import 'bulma/css/bulma.min.css';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import './CheckoutTable.css';
-import 'bulma/css/bulma.min.css';
 
 class CheckoutTable extends Component {
   render() {
@@ -48,7 +48,13 @@ class CheckoutTable extends Component {
 }
 
 CheckoutTable.propTypes = {
-  cartList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  cartList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.number,
+    PropTypes.bool,
+    PropTypes.objectOf(PropTypes.any),
+  ]))).isRequired,
   itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 

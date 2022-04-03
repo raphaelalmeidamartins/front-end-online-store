@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import ProductPageCarousel from './ProductPageCarousel';
 import { getProductById } from '../services/api';
 import AddToCartButton from './AddToCartButton';
 import FreeShipping from './FreeShipping';
@@ -12,10 +13,15 @@ class ProductPage extends Component {
     this.state = {
       shipping: {},
       attributes: [],
+      pictures: [{ url: '' }],
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.fetchProduct();
+  }
+
+  fetchProduct = async () => {
     const {
       match: { params },
     } = this.props;
@@ -24,7 +30,7 @@ class ProductPage extends Component {
   }
 
   render() {
-    const { title, thumbnail, price, attributes } = this.state;
+    const { title, price, attributes, pictures } = this.state;
     const { shipping } = this.state;
     const freeShipping = shipping.free_shipping;
     const { handleAddCartToList } = this.props;
@@ -32,7 +38,7 @@ class ProductPage extends Component {
     return (
       <main className="ProductPage">
         <section className="ProductPage-details">
-          <div className="ProductPage-image"><img src={ thumbnail } alt={ title } /></div>
+          <ProductPageCarousel pictures={ pictures } />
           <div className="ProductPage-info">
             <h2>{title}</h2>
             {freeShipping && <FreeShipping />}
@@ -40,7 +46,9 @@ class ProductPage extends Component {
             <ul>
               {attributes.map((attr) => (
                 <li key={ attr.id }>
-                  <h3><strong>{`${attr.name}:`}</strong></h3>
+                  <h3>
+                    <strong>{`${attr.name}:`}</strong>
+                  </h3>
                   <p>{attr.value_name}</p>
                 </li>
               ))}

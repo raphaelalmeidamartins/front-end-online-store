@@ -32,8 +32,14 @@ AddToCartButton.defaultProps = {
 AddToCartButton.propTypes = {
   handleAddCartToList: PropTypes.func.isRequired,
   productId: PropTypes.string,
-  productList: PropTypes.arrayOf(PropTypes.object),
-  productObj: PropTypes.objectOf(PropTypes.any),
+  productList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+  productObj: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.number,
+    PropTypes.bool,
+    PropTypes.objectOf(PropTypes.any),
+  ])),
 };
 
 export default AddToCartButton;

@@ -69,7 +69,12 @@ ShoppingCart.defaultProps = {
 };
 
 ShoppingCart.propTypes = {
-  cartList: PropTypes.arrayOf(PropTypes.object),
+  cartList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.number,
+    PropTypes.bool,
+  ]))),
   itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
   handleDecrease: PropTypes.func.isRequired,
   handleIncrease: PropTypes.func.isRequired,
