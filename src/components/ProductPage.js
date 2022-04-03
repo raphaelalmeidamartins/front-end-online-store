@@ -11,32 +11,45 @@ class ProductPage extends Component {
     super();
     this.state = {
       shipping: {},
+      attributes: [],
     };
   }
 
   async componentDidMount() {
-    const { match: { params } } = this.props;
+    const {
+      match: { params },
+    } = this.props;
     const product = await getProductById(params.id);
     this.setState({ ...product });
   }
 
   render() {
-    const { title, thumbnail, price } = this.state;
+    const { title, thumbnail, price, attributes } = this.state;
     const { shipping } = this.state;
     const freeShipping = shipping.free_shipping;
     const { handleAddCartToList } = this.props;
 
     return (
       <main className="ProductPage">
-        <section>
-          <img src={ thumbnail } alt={ title } />
-          {freeShipping && <FreeShipping />}
-          <h2>{title}</h2>
-          <p>{`R$ ${price}`}</p>
-          <AddToCartButton
-            handleAddCartToList={ handleAddCartToList }
-            productObj={ this.state }
-          />
+        <section className="ProductPage-details">
+          <div className="ProductPage-image"><img src={ thumbnail } alt={ title } /></div>
+          <div className="ProductPage-info">
+            <h2>{title}</h2>
+            {freeShipping && <FreeShipping />}
+            <p>{`R$ ${price}`}</p>
+            <ul>
+              {attributes.map((attr) => (
+                <li key={ attr.id }>
+                  <h3><strong>{`${attr.name}:`}</strong></h3>
+                  <p>{attr.value_name}</p>
+                </li>
+              ))}
+            </ul>
+            <AddToCartButton
+              handleAddCartToList={ handleAddCartToList }
+              productObj={ this.state }
+            />
+          </div>
         </section>
         <ProductReviews { ...this.props } />
       </main>

@@ -1,4 +1,26 @@
 .ProductPage {
   border: 1px solid black;
   margin: 100px 0;
+  max-width: 700px;
+}
+
+.ProductPage-details {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.ProductPage-image {
+  height: 200px;
+  width: 200px;
+}
+
+.ProductPage-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.ProductPage-info {
+  border: 1px solid black;
+  width: 60%;
 }
