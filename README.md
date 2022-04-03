@@ -25,6 +25,12 @@ This project is still under development. I am implementing the layout and refact
 * Kanban
 * Scrum
 
+## :man_technologist: Developed Skills
+
+* Work in group using agile development methologies
+* Develop a React application using React Router
+* Fetch data from a public API
+
 ## :hammer_and_wrench: Tools
 
 * HTML5
