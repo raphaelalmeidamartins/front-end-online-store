@@ -31,14 +31,27 @@ class App extends Component {
   handleAddCartToList = (productId, list, productObj) => {
     const { cartList } = this.state;
     if (productObj) {
-      this.setState({
-        cartList: [...cartList, productObj],
-      }, this.updateQuantity);
+      if (this.isItemAvailable(productObj)) {
+        this.setState({
+          cartList: [...cartList, productObj],
+        }, this.updateQuantity);
+      }
     } else {
       const selectedProduct = list.find((product) => product.id === productId);
-      this.setState({ cartList: [...cartList, selectedProduct] }, this.updateQuantity);
+      if (this.isItemAvailable(selectedProduct)) {
+        this.setState({ cartList: [...cartList, selectedProduct] }, this.updateQuantity);
+      }
     }
   };
+
+  isItemAvailable = (productObj) => {
+    const { cartList } = this.state;
+    const itemsInTheCart = cartList.filter((item) => item.id === productObj.id);
+    if (itemsInTheCart.length < productObj.available_quantity) {
+      return true;
+    }
+    return false;
+  }
 
   handleDecrease = (productId) => {
     const { cartList, itemsQuantity } = this.state;
