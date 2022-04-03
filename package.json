@@ -1,4 +1,5 @@
 {
+  "homepage": "https://raphaelalmeidamartins.github.io/front-end-online-store",
   "name": "sd-0x-project-frontend-online-store",
   "version": "0.1.0",
   "private": true,
@@ -17,6 +18,8 @@
     "redux-thunk": "^2.4.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -41,6 +44,7 @@
     "eslint": "6.8.0",
     "eslint-config-trybe-frontend": "1.2.3",
     "eslint-plugin-babel": "^5.3.1",
+    "gh-pages": "^3.2.3",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0"
