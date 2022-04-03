@@ -2,15 +2,17 @@
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  margin-top: 100px;
+  margin: 80px 0;
   max-width: 650px;
   padding: 1.5rem;
   width: 100vw;
 }
 
 .Checkout h2 {
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .Checkout form {
@@ -38,22 +40,6 @@
   flex-grow: 1;
 }
 
-.Checkout-payment {
-  display: flex;
-  justify-content: space-evenly;
-  max-width: 300px;
-}
-
-.Checkout-payment label {
-  display: flex;
-  width: fit-content;
-}
-
-.Checkout-payment input {
-  margin-right: 0.5rem;
-  width: fit-content;
-}
-
 .Checkout label:not( :last-child ) {
   margin-right: 0.5rem;
 }
@@ -70,6 +56,22 @@
   width: 70px;
 }
 
+.Checkout-payment {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.Checkout-payment * {
+  display: flex;
+  width: fit-content;
+}
+
+.Checkout-payment input {
+  margin-right: 0.5rem;
+  width: fit-content;
+}
 
 .Checkout button {
   background-color: transparent;
@@ -80,6 +82,7 @@
   display: flex;
   font: 600;
   justify-content: center;
+  margin-top: 1.5rem;
   padding: 10px 15px;
 }
 
