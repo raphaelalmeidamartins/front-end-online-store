@@ -66,7 +66,9 @@ class ProductPage extends Component {
 }
 
 ProductPage.propTypes = {
-  match: PropTypes.objectOf(Object).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.objectOf(PropTypes.string),
+  }).isRequired,
   handleAddCartToList: PropTypes.func.isRequired,
 };
 

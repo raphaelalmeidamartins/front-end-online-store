@@ -74,6 +74,7 @@ ShoppingCart.propTypes = {
     PropTypes.array,
     PropTypes.number,
     PropTypes.bool,
+    PropTypes.objectOf(PropTypes.any),
   ]))),
   itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
   handleDecrease: PropTypes.func.isRequired,
