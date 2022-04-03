@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { getProductById } from '../services/api';
 import AddToCartButton from './AddToCartButton';
 import FreeShipping from './FreeShipping';
+import './ProductPage.css';
 import ProductReviews from './ProductReviews';
 
 class ProductPage extends Component {
@@ -26,11 +27,11 @@ class ProductPage extends Component {
     const { handleAddCartToList } = this.props;
 
     return (
-      <div>
+      <main className="ProductPage">
         <section>
+          <img src={ thumbnail } alt={ title } />
           {freeShipping && <FreeShipping />}
           <h2>{title}</h2>
-          <img src={ thumbnail } alt={ title } />
           <p>{`R$ ${price}`}</p>
           <AddToCartButton
             handleAddCartToList={ handleAddCartToList }
@@ -38,7 +39,7 @@ class ProductPage extends Component {
           />
         </section>
         <ProductReviews { ...this.props } />
-      </div>
+      </main>
     );
   }
 }

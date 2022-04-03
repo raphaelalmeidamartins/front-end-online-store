@@ -36,7 +36,6 @@
 
 .CategoriesList ul li {
   list-style: none;
-  padding: 1.2rem;
   position: relative;
   transition: 400ms;
 }
@@ -47,6 +46,9 @@
 
 .CategoriesList ul li label {
   cursor: pointer;
+  display: block;
+  padding: 1.2rem;
+  width: 100%;
 }
 
 .CategoriesList-selected {
