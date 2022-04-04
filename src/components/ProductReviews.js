@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 import './ProductReviews.css';
 
 class ProductsDetails extends React.Component {
@@ -75,17 +76,26 @@ class ProductsDetails extends React.Component {
               />
             </label>
             <ol className="ProductReviews-rating-container">
-              {[...Array(maxRating)].map((item, i) => {
+              {[...Array(maxRating)].map((_, i) => {
                 const index = i + 1;
                 return (
-                  <label htmlFor="index" key={ index }>
-                    <input
-                      type="radio"
-                      name="rating"
-                      value={ index }
-                      onChange={ this.handleChange }
-                    />
-                  </label>
+                  <li key={ index }>
+                    <label
+                      htmlFor={ `${index}-${rating}` }
+                      className="ProductReviews-rating-label"
+                    >
+                      <input
+                        id={ `${index}-${rating}` }
+                        type="radio"
+                        name="rating"
+                        value={ index }
+                        onChange={ this.handleChange }
+                      />
+                      <span>
+                        {rating >= i + 1 ? <FaStar /> : <FaRegStar />}
+                      </span>
+                    </label>
+                  </li>
                 );
               })}
             </ol>
@@ -118,7 +128,19 @@ class ProductsDetails extends React.Component {
               <section className="ProductReviews-review" key={ i }>
                 <div className="info">
                   <h4>{item.email}</h4>
-                  <p>{item.index}</p>
+                  <ol>
+                    {[...Array(maxRating)].map((_, index) => (
+                      <li key={ index }>
+                        <span className="Review-score">
+                          {index + 1 <= Number(item.rating) ? (
+                            <FaStar />
+                          ) : (
+                            <FaRegStar />
+                          )}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
                 </div>
                 <p>{item.message}</p>
               </section>

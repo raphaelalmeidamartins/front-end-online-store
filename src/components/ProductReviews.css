@@ -7,6 +7,28 @@
   flex-flow: column nowrap;
 }
 
+.ProductReviews ol {
+  display: flex;
+  list-style-type: none;
+}
+
+.Review-score {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.ProductReviews-rating-label {
+  color: var(--accent-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.ProductReviews-rating-label input {
+  cursor: pointer;
+  position: absolute;
+  visibility: hidden;
+}
+
 .ProductReviews input:not( [ type = 'radio' ] ), .ProductReviews textarea {
   border: 1px solid var(--divider-color);
   border-radius: 10px;
@@ -18,6 +40,7 @@
 
 .ProductReviews-rating-container {
   margin: 0.5rem 0;
+  position: relative;
 }
 
 .ProductReviews button {
@@ -56,9 +79,13 @@
 }
 
 .ProductReviews-review {
+  border: 1px solid var(--divider-color);
+  border-radius: 10px;
   margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .ProductReviews-review h4 {
   font-weight: 600;
+  margin-bottom: 0.2rem;
 }
