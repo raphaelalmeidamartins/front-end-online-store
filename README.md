@@ -28,9 +28,7 @@ We had to develop a Online Store React application fetching for products data fr
 * CSS3
 * JavaScript ES6+
 * React.js
-* React Testing Library (RTL)
 * React Icons (icon library)
-* Redux
 * GitHub Pages
 
 ## :iphone: Mobile version
