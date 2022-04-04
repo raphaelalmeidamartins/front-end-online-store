@@ -72,3 +72,10 @@
     width: 100%;
   }
 }
+
+@media screen and ( max-height : 568px ) {
+
+  .ShoppingCart {
+    height: 45vh;
+  }
+}

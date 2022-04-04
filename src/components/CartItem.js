@@ -50,11 +50,11 @@ class CartItem extends Component {
           >
             {title}
           </p>
-          <span className="CartItem-price">
-            <span>R$</span>
-            <span>{(price * quantity).toFixed(2)}</span>
-          </span>
         </div>
+        <span className="CartItem-price">
+          <span>R$</span>
+          <span>{(price * quantity).toFixed(2)}</span>
+        </span>
         <div className="CartItem-panel-quantity">
           <button
             type="button"
