@@ -8,16 +8,7 @@ React group project developed by [Raphael Martins](https://www.linkedin.com/in/r
 
 We had to develop a Online Store React application fetching for products data from the Mercado Livre's API. We also had to use agile methologies such as Scrum and Kanban.
 
-### Note
-
-This project is still under development. I am implementing the layout and refactoring the code. I haven't deployed the application yet.
-
-### In progress
-
-- [ ] Finishing CSS
-- [ ] Refactoring the code to use the Redux library
-- [ ] Implementing integration tests with React Testing Library (RTL)
-- [ ] Adding English translation (the project is currently only available in Brazilian Portuguese)
+[Click here](https://raphaelalmeidamartins.github.io/front-end-online-store/#/) to check out the final version of the project on your browser.
 
 ## :memo: Methodologies
 
