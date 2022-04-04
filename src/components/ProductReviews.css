@@ -1,3 +1,64 @@
 .ProductReviews {
-  border: 1px solid black;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.ProductReviews form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.ProductReviews input:not( [ type = 'radio' ] ), .ProductReviews textarea {
+  border: 1px solid var(--divider-color);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  resize: none;
+  width: 100%;
+}
+
+.ProductReviews-rating-container {
+  margin: 0.5rem 0;
+}
+
+.ProductReviews button {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  color: var(--accent-color);
+  cursor: pointer;
+  display: flex;
+  font: 600;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 10px 15px;
+}
+
+.ProductReviews button:disabled {
+  border: 1px solid var(--divider-color);
+  color: var(--divider-color);
+}
+
+.ProductReviews button:hover:not( :disabled ) {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.ProductReviews h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.ProductReviews-noreview {
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+.ProductReviews-review {
+  margin-top: 1.5rem;
+}
+
+.ProductReviews-review h4 {
+  font-weight: 600;
 }

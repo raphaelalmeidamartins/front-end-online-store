@@ -61,7 +61,7 @@ class ProductsDetails extends React.Component {
     const maxRating = 5;
     return (
       <aside className="ProductReviews">
-        <h2>Avaliações</h2>
+        <h2>Avalie esse produto</h2>
         <form>
           <section className="infoContainer">
             <label htmlFor="product-detail-email">
@@ -74,7 +74,7 @@ class ProductsDetails extends React.Component {
                 onChange={ this.handleChange }
               />
             </label>
-            <ol>
+            <ol className="ProductReviews-rating-container">
               {[...Array(maxRating)].map((item, i) => {
                 const index = i + 1;
                 return (
@@ -101,19 +101,23 @@ class ProductsDetails extends React.Component {
           <button
             type="button"
             onClick={ this.handleSubmit }
-            disabled={ email.length === 0 || message.length === 0 || rating === 0 }
+            disabled={
+              email.length === 0 || message.length === 0 || rating === 0
+            }
           >
             Avaliar
           </button>
         </form>
         <section className="container">
           {!evaluation.length ? (
-            <p>Avaliações</p>
+            <p className="ProductReviews-noreview">
+              Este produto ainda não tem avaliações
+            </p>
           ) : (
             evaluation.map((item, i) => (
-              <section className="review" key={ i }>
+              <section className="ProductReviews-review" key={ i }>
                 <div className="info">
-                  <p>{item.email}</p>
+                  <h4>{item.email}</h4>
                   <p>{item.index}</p>
                 </div>
                 <p>{item.message}</p>
