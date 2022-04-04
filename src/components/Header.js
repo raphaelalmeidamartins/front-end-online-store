@@ -22,31 +22,37 @@ class Header extends Component {
     return (
       <header className="Header">
         <div className="Header-container">
-          { pathname === '/' && (
+          {pathname === '/' && (
             <button
               type="button"
               className="Header-cart-icon Header-cart-icon-category"
               onClick={ toggleCategories }
             >
-              { displayCategories ? <TiArrowBackOutline /> : <BiCategory />}
-            </button>)}
-          { pathname !== '/' && (
+              {displayCategories ? <TiArrowBackOutline /> : <BiCategory />}
+            </button>
+          )}
+          {pathname !== '/' && (
             <button
               type="button"
               className="Header-cart-icon Header-cart-icon-category"
               onClick={ () => history.goBack() }
             >
               <TiArrowBackOutline />
-            </button>)}
-          <img className="Header-logo" src={ logo } alt="March 25th Online Store" />
+            </button>
+          )}
+          <Link to="/">
+            <img
+              className="Header-logo"
+              src={ logo }
+              alt="March 25th Online Store"
+            />
+          </Link>
           <Link to="/shopping-cart">
             <div className="Header-cart-icon">
               <RiShoppingCartFill />
             </div>
             <div className="Header-cart-quantity">
-              <span>
-                {itemsQuantity}
-              </span>
+              <span>{itemsQuantity}</span>
             </div>
           </Link>
         </div>
