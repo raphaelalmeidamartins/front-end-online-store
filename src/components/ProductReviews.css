@@ -10,6 +10,7 @@
 .ProductReviews input:not( [ type = 'radio' ] ), .ProductReviews textarea {
   border: 1px solid var(--divider-color);
   border-radius: 10px;
+  font-size: 0.9rem;
   padding: 0.5rem 1rem;
   resize: none;
   width: 100%;
