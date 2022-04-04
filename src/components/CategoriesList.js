@@ -62,13 +62,6 @@ class CategoriesList extends Component {
             </li>
           ))}
         </ul>
-        <p className="Credits">
-          Desenvolvido em React por
-          {' '}
-          <a href="https://www.linkedin.com/in/raphaelameidamartins/">
-            Raphael Martins
-          </a>
-        </p>
       </aside>
     );
   }
