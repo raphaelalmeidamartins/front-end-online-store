@@ -9,7 +9,7 @@ class ProductsDetails extends React.Component {
       email: '',
       message: '',
       evaluation: [],
-      index: 0,
+      rating: 0,
     };
   }
 
@@ -34,14 +34,14 @@ class ProductsDetails extends React.Component {
   };
 
   handleSubmit = () => {
-    const { email, message, index, evaluation } = this.state;
-    const rate = { email, message, index };
+    const { email, message, rating, evaluation } = this.state;
+    const rate = { email, message, rating };
     this.setState(
       {
         evaluation: [...evaluation, rate],
         email: '',
         message: '',
-        index: 0,
+        rating: 0,
       },
       this.storageEvaluations,
     );
@@ -57,10 +57,10 @@ class ProductsDetails extends React.Component {
   };
 
   render() {
-    const { email, message, evaluation } = this.state;
+    const { email, message, rating, evaluation } = this.state;
     const maxRating = 5;
     return (
-      <aside>
+      <aside className="ProductReviews">
         <h2>Avaliações</h2>
         <form>
           <section className="infoContainer">
@@ -81,7 +81,7 @@ class ProductsDetails extends React.Component {
                   <label htmlFor="index" key={ index }>
                     <input
                       type="radio"
-                      name="index"
+                      name="rating"
                       value={ index }
                       onChange={ this.handleChange }
                     />
@@ -101,6 +101,7 @@ class ProductsDetails extends React.Component {
           <button
             type="button"
             onClick={ this.handleSubmit }
+            disabled={ email.length === 0 || message.length === 0 || rating === 0 }
           >
             Avaliar
           </button>
