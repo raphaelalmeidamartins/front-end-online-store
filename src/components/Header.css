@@ -5,6 +5,7 @@
   box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.123);
   display: flex;
   justify-content: center;
+  left: 0;
   padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
