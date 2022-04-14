@@ -1,9 +1,0 @@
-ignore_files:
-  - src/__mocks__/
-  - src/__tests__/
-  - .trybe/
-  - .eslintignore
-  - .eslintrc.json
-  - .stylelintignore
-  - .stylelintrc.json
-  - exemplo-motorola.json
