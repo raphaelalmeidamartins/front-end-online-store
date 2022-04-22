@@ -26,6 +26,7 @@ We had to develop a Online Store React application fetching for products data fr
 
 * HTML5
 * CSS3
+* Sass
 * JavaScript ES6+
 * React.js
 * React Icons (icon library)
