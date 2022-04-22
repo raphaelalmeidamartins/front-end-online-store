@@ -3,13 +3,64 @@
 }
 
 .ProductReviews form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 .ProductReviews ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style-type: none;
+}
+
+.ProductReviews input:not([type="radio"]),
+.ProductReviews textarea {
+  border: 1px solid var(--divider-color);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  resize: none;
+  width: 100%;
+}
+
+.ProductReviews button {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  color: var(--accent-color);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font: 600;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+  padding: 10px 15px;
+}
+
+.ProductReviews button:disabled {
+  border: 1px solid var(--divider-color);
+  color: var(--divider-color);
+}
+
+.ProductReviews button:hover:not(:disabled) {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.ProductReviews h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+  text-align: center;
 }
 
 .Review-score {
@@ -29,48 +80,9 @@
   visibility: hidden;
 }
 
-.ProductReviews input:not( [ type = 'radio' ] ), .ProductReviews textarea {
-  border: 1px solid var(--divider-color);
-  border-radius: 10px;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  resize: none;
-  width: 100%;
-}
-
 .ProductReviews-rating-container {
   margin: 0.5rem 0;
   position: relative;
-}
-
-.ProductReviews button {
-  background-color: transparent;
-  border: 1px solid var(--accent-color);
-  border-radius: 10px;
-  color: var(--accent-color);
-  cursor: pointer;
-  display: flex;
-  font: 600;
-  justify-content: center;
-  margin-top: 1rem;
-  padding: 10px 15px;
-}
-
-.ProductReviews button:disabled {
-  border: 1px solid var(--divider-color);
-  color: var(--divider-color);
-}
-
-.ProductReviews button:hover:not( :disabled ) {
-  background-color: var(--accent-color);
-  color: white;
-}
-
-.ProductReviews h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 1.5rem 0;
-  text-align: center;
 }
 
 .ProductReviews-noreview {
@@ -89,3 +101,4 @@
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
+/*# sourceMappingURL=ProductReviews.css.map */

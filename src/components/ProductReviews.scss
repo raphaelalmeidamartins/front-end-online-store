@@ -1,0 +1,92 @@
+.ProductReviews {
+  width: 100%;
+
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  ol {
+    display: flex;
+    list-style-type: none;
+  }
+
+  input:not([type="radio"]),
+  textarea {
+    border: 1px solid var(--divider-color);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    resize: none;
+    width: 100%;
+  }
+
+  button {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    color: var(--accent-color);
+    cursor: pointer;
+    display: flex;
+    font: 600;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 10px 15px;
+
+    &:disabled {
+      border: 1px solid var(--divider-color);
+      color: var(--divider-color);
+    }
+
+    &:hover:not(:disabled) {
+      background-color: var(--accent-color);
+      color: white;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+}
+
+.Review-score {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.ProductReviews-rating-label {
+  color: var(--accent-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+
+  input {
+    cursor: pointer;
+    position: absolute;
+    visibility: hidden;
+  }
+}
+
+.ProductReviews-rating-container {
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.ProductReviews-noreview {
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+.ProductReviews-review {
+  border: 1px solid var(--divider-color);
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+
+  h4 {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+}

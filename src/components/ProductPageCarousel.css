@@ -7,7 +7,8 @@
 .Carousel-item img {
   background-color: white;
   height: 300px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 
@@ -18,3 +19,4 @@
 .rec-pagination {
   visibility: hidden;
 }
+/*# sourceMappingURL=ProductPageCarousel.css.map */

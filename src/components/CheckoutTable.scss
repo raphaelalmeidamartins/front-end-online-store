@@ -1,21 +1,18 @@
 .CheckoutTable-product {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-}
 
-.CheckoutTable-product img {
-  border-radius: 50%;
-  height: 40px;
-  margin-right: 0.5rem;
-  -o-object-fit: contain;
-     object-fit: contain;
-  width: 40px;
-}
+  img {
+    border-radius: 50%;
+    height: 40px;
+    margin-right: 0.5rem;
+    object-fit: contain;
+    width: 40px;
+  }
 
-.CheckoutTable-product p {
-  font-style: italic;
-  margin-right: 0.5rem;
+  p {
+    font-style: italic;
+    margin-right: 0.5rem;
+  }
 }
 
 .CheckoutTable-product-price {
@@ -36,16 +33,19 @@
 }
 
 @media screen and (max-width: 500px) {
-  .CheckoutTable-product img {
-    display: none;
+  .CheckoutTable-product {
+    img {
+      display: none;
+    }
   }
+
   .CheckoutTable-product-price {
     font-size: 0.8rem;
     vertical-align: top;
     width: 70px;
   }
+
   .CheckoutTable-product-quantity {
     width: 50px;
   }
 }
-/*# sourceMappingURL=CheckoutTable.css.map */

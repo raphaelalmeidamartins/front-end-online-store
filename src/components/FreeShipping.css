@@ -1,8 +1,14 @@
 .FreeShipping {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-weight: 600;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   right: 1rem;
   top: 5px;
 }
@@ -13,3 +19,4 @@
   margin-left: 0.5rem;
   width: 30px;
 }
+/*# sourceMappingURL=FreeShipping.css.map */

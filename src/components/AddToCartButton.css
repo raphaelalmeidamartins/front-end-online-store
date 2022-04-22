@@ -3,13 +3,20 @@
   border-radius: 10px;
   color: var(--white);
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font: 600;
   padding: 10px 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
 .AddToCartButton:hover {
-  box-shadow: 3px 4px 4px rgba(63, 63, 63, 0.301);
-  filter: brightness(120%);
+  -webkit-box-shadow: 3px 4px 4px rgba(63, 63, 63, 0.301);
+          box-shadow: 3px 4px 4px rgba(63, 63, 63, 0.301);
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
+/*# sourceMappingURL=AddToCartButton.css.map */

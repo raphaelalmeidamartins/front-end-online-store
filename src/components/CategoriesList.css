@@ -1,31 +1,32 @@
 .CategoriesList {
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   background-color: white;
   border: 1px solid var(--divider-color);
   border-radius: 10px;
   color: var(--black);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 85vh;
   margin-right: 1rem;
   padding-bottom: 1.2rem;
+  position: -webkit-sticky;
   position: sticky;
   top: 100px;
+  -webkit-transition: 400ms;
   transition: 400ms;
   width: 375px;
 }
 
 .CategoriesList:hover {
-  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
-}
-
-.CategoriesList ul {
-  overflow-y: scroll;
-}
-
-.CategoriesList ul li input {
-  position: absolute;
-  visibility: collapse;
+  -webkit-box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
 }
 
 .CategoriesList h2 {
@@ -34,10 +35,20 @@
   padding: 1.2rem;
 }
 
+.CategoriesList ul {
+  overflow-y: scroll;
+}
+
 .CategoriesList ul li {
   list-style: none;
   position: relative;
+  -webkit-transition: 400ms;
   transition: 400ms;
+}
+
+.CategoriesList ul li input {
+  position: absolute;
+  visibility: collapse;
 }
 
 .CategoriesList ul li:hover {
@@ -62,8 +73,7 @@
   padding: 1.2rem;
 }
 
-@media screen and ( max-width : 649px ) {
-
+@media screen and (max-width: 649px) {
   .CategoriesList {
     height: 100vh;
     left: 0;
@@ -73,8 +83,8 @@
     width: 100vw;
     z-index: 5;
   }
-
   .CategoriesList-hidden {
     left: -100vw;
   }
 }
+/*# sourceMappingURL=CategoriesList.css.map */

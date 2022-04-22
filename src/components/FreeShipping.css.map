@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,WAAW,EAAE,MAAM;EACnB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,GAAG;EAChB,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,IAAI;EACX,GAAG,EAAE,GAAG;CACT;;AAED,AAAA,kBAAkB,CAAC;EACjB,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "FreeShipping.scss"
+    ],
+    "names": [],
+    "file": "FreeShipping.css"
+}

@@ -1,0 +1,89 @@
+.ProductCard {
+  background-color: white;
+  border: 1px solid var(--divider-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  padding-left: 120px;
+  position: relative;
+  width: 400px;
+
+  .AddToCartButton {
+    align-self: flex-end;
+    margin-top: 1rem;
+  }
+
+  &:hover {
+    box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  a {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: space-between;
+    text-align: right;
+  }
+}
+
+.ProductCard-Link {
+  display: flex;
+}
+
+.ProductCard-Image {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  height: 100%;
+  left: 0;
+  margin-right: 1rem;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  width: 120px;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
+.ProductCard-title {
+  align-self: flex-end;
+  color: var(--primary-text);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+  max-height: 82px;
+  overflow: hidden;
+  padding: 5px;
+  width: 100%;
+}
+
+.ProductCard-price-symbol {
+  font-size: 1rem;
+}
+
+.ProductCard-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+@media screen and (max-width: 645px) {
+  .ProductCard {
+    margin: 1.5rem 0;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .ProductCard {
+    height: fit-content;
+    width: 100%;
+  }
+}

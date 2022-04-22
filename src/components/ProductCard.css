@@ -1,16 +1,18 @@
-.ProductCard .AddToCartButton {
-  align-self: flex-end;
-  margin-top: 1rem;
-}
-
 .ProductCard {
   background-color: white;
   border: 1px solid var(--divider-color);
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 240px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 2rem;
   padding: 1rem;
   padding-left: 120px;
@@ -18,26 +20,46 @@
   width: 400px;
 }
 
+.ProductCard .AddToCartButton {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: 1rem;
+}
+
 .ProductCard:hover {
-  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.25);
 }
 
 .ProductCard a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   height: 100%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-align: right;
 }
 
 .ProductCard-Link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .ProductCard-Image {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: white;
   border-radius: 10px 0 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 100%;
   left: 0;
@@ -49,16 +71,20 @@
 }
 
 .ProductCard-Image img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 
 .ProductCard-title {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   color: var(--primary-text);
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 5px;
+  max-height: 82px;
+  overflow: hidden;
   padding: 5px;
   width: 100%;
 }
@@ -73,17 +99,18 @@
   text-align: right;
 }
 
-@media screen and ( max-width : 645px ) {
-
+@media screen and (max-width: 645px) {
   .ProductCard {
     margin: 1.5rem 0;
   }
 }
 
-@media screen and ( max-width : 1150px ) {
-
+@media screen and (max-width: 1150px) {
   .ProductCard {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     width: 100%;
   }
 }
+/*# sourceMappingURL=ProductCard.css.map */

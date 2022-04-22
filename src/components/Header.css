@@ -1,10 +1,17 @@
 .Header {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: var(--primary-color);
   border-bottom: 1px solid var(--divider-color);
-  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.123);
+  -webkit-box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.123);
+          box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.123);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   left: 0;
   padding: 0.5rem 1rem;
   position: fixed;
@@ -14,8 +21,12 @@
 }
 
 .Header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 1120px;
 }
 
@@ -24,57 +35,69 @@
 }
 
 .Header-logo {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 130px;
 }
 
 .Header-cart-icon {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: transparent;
   color: var(--text-icons);
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 2.2rem;
   height: 50px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 60px;
 }
 
 .Header-cart-icon:hover {
-  filter: brightness(300%);
+  -webkit-filter: brightness(300%);
+          filter: brightness(300%);
 }
 
 .Header-cart-quantity {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: red;
   border-radius: 50%;
   color: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-weight: 600;
   height: 20px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   right: 0;
   top: 0;
   width: 20px;
 }
 
-@media screen and ( min-width : 375px ) {
-
+@media screen and (min-width: 375px) {
   .Header-logo {
     margin-left: 1rem;
     width: 150px;
   }
 }
 
-@media screen and ( min-width : 650px ) {
-
+@media screen and (min-width: 650px) {
   .Header-cart-icon-category {
     display: none;
   }
-
   .Header-logo {
     margin-left: 1rem;
     width: 180px;
   }
 }
+/*# sourceMappingURL=Header.css.map */

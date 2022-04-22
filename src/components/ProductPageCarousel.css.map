@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,GAAG;EACX,KAAK,EAAE,IAAI;CAQZ;;AAXD,AAKE,cALY,CAKZ,GAAG,CAAC;EACF,gBAAgB,EAAE,KAAK;EACvB,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,IAAI;CACZ;;AAGH,AAAA,IAAI,AAAA,UAAU,CAAC;EACb,aAAa,EAAE,CAAC;CACjB;;AAED,AAAA,eAAe,CAAC;EACd,UAAU,EAAE,MAAM;CACnB",
+    "sources": [
+        "ProductPageCarousel.scss"
+    ],
+    "names": [],
+    "file": "ProductPageCarousel.css"
+}

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
 import Checkout from './components/Checkout';
 import Header from './components/Header';
 import ProductPage from './components/ProductPage';

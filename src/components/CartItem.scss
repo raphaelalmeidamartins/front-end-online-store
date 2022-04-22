@@ -1,0 +1,141 @@
+.CartItem {
+  align-items: center;
+  border-bottom: 1px solid var(--divider-color);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 1rem;
+
+  &:first-child {
+    border-top: 1px solid var(--divider-color);
+  }
+}
+
+.CartItem-container-item {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 2;
+  margin-bottom: 1rem;
+  width: 620px;
+}
+
+
+.CartItem-image {
+  height: 92px;
+  margin-right: 1.5rem;
+  object-fit: contain;
+  width: 92px;
+}
+
+.CartItem-title {
+  flex-basis: 320px;
+  margin-right: 2rem;
+  max-width: 320px;
+}
+
+.CartItem-icon {
+  background-color: transparent;
+  color: var(--secondary-text);
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  span {
+    align-items: center;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: center;
+    padding: 0.2rem;
+  }
+}
+
+.CartItem-price {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  font-weight: 500;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.CartItem-remove-item-button {
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: 200ms;
+}
+
+.CartItem-panel-quantity {
+  align-items: center;
+  display: flex;
+  flex-grow: 2;
+  justify-content: space-between;
+}
+
+.CartItem-container-quantity {
+  align-items: center;
+  background-color: white;
+  border: 1px solid var(--secondary-text);
+  border-radius: 10px;
+  color: var(--secondary-text);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100px;
+}
+
+@media screen and ( max-width : 798px ) {
+
+  .CartItem-panel-quantity {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and ( max-width : 490px ) {
+
+  .CartItem-image {
+    height: 50px;
+    margin-right: 1rem;
+    object-fit: contain;
+    width: 50px;
+  }
+
+  .CartItem-title {
+    margin-right: 0;
+  }
+}
+
+@media screen and ( max-width : 375px ) {
+
+  .CartItem-image {
+    display: none;
+  }
+
+  .CartItem-price {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+    width: 100%;
+
+    span:not( :first-child ) {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .CartItem-container-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .CartItem-panel-quantity {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
