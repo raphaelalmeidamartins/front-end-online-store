@@ -19,6 +19,24 @@
     flex-flow: column nowrap;
     max-width: 700px;
     width: 100%;
+
+    button {
+      background-color: transparent;
+      border: 1px solid red;
+      border-radius: 10px;
+      color: red;
+      cursor: pointer;
+      display: flex;
+      font: 600;
+      justify-content: center;
+      margin-top: 1.5rem;
+      padding: 10px 15px;
+
+      &:hover {
+        background-color: red;
+        color: white;
+      }
+    }
   }
 
   input,
@@ -75,24 +93,6 @@
   input {
     margin-right: 0.5rem;
     width: fit-content;
-  }
-
-  button {
-    background-color: transparent;
-    border: 1px solid red;
-    border-radius: 10px;
-    color: red;
-    cursor: pointer;
-    display: flex;
-    font: 600;
-    justify-content: center;
-    margin-top: 1.5rem;
-    padding: 10px 15px;
-
-    &:hover {
-      background-color: red;
-      color: white;
-    }
   }
 }
 

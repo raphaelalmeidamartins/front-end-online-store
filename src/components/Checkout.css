@@ -34,6 +34,28 @@
   width: 100%;
 }
 
+.Checkout form button {
+  background-color: transparent;
+  border: 1px solid red;
+  border-radius: 10px;
+  color: red;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font: 600;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1.5rem;
+  padding: 10px 15px;
+}
+
+.Checkout form button:hover {
+  background-color: red;
+  color: white;
+}
+
 .Checkout input,
 .Checkout select {
   border: 1px solid var(--divider-color);
@@ -105,28 +127,6 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-
-.Checkout-payment button {
-  background-color: transparent;
-  border: 1px solid red;
-  border-radius: 10px;
-  color: red;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font: 600;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 1.5rem;
-  padding: 10px 15px;
-}
-
-.Checkout-payment button:hover {
-  background-color: red;
-  color: white;
 }
 
 @media screen and (max-width: 400px) {
