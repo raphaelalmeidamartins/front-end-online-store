@@ -21,6 +21,7 @@ We had to develop a Online Store React application fetching for products data fr
 * Work in group using agile development methodologies
 * Develop a React application using React Router
 * Fetch data from a public API
+* Use React Context API for state management
 
 ## :hammer_and_wrench: Tools
 
@@ -29,6 +30,7 @@ We had to develop a Online Store React application fetching for products data fr
 * Sass
 * JavaScript ES6+
 * React.js
+* React Context API
 * React Icons (icon library)
 * GitHub Pages
 
