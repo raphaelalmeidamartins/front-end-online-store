@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { AppContext } from '../context/AppContext';
 import { getProductById } from '../services/api';
 import AddToCartButton from './AddToCartButton';
 import FreeShipping from './FreeShipping';
@@ -34,7 +35,6 @@ class ProductPage extends Component {
     const { title, price, attributes, pictures } = this.state;
     const { shipping } = this.state;
     const freeShipping = shipping.free_shipping;
-    const { handleAddCartToList } = this.props;
 
     return (
       <main className="ProductPage">
@@ -46,10 +46,7 @@ class ProductPage extends Component {
               <span className="ProductPage-price-symbol">R$</span>
               {`${price.toFixed(2)}`}
             </p>
-            <AddToCartButton
-              handleAddCartToList={ handleAddCartToList }
-              productObj={ this.state }
-            />
+            <AddToCartButton productObj={ this.state } />
           </div>
           {freeShipping && <FreeShipping />}
           <div className="ProductPage-info">
@@ -75,7 +72,8 @@ ProductPage.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.objectOf(PropTypes.string),
   }).isRequired,
-  handleAddCartToList: PropTypes.func.isRequired,
 };
+
+ProductPage.contextType = AppContext;
 
 export default ProductPage;

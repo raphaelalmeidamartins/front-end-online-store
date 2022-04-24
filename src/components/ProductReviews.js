@@ -3,7 +3,7 @@ import React from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import './ProductReviews.css';
 
-class ProductsDetails extends React.Component {
+class ProductReviews extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -152,7 +152,7 @@ class ProductsDetails extends React.Component {
   }
 }
 
-ProductsDetails.propTypes = {
+ProductReviews.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
@@ -160,4 +160,4 @@ ProductsDetails.propTypes = {
   }).isRequired,
 };
 
-export default ProductsDetails;
+export default ProductReviews;

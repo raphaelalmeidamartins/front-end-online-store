@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 import AddToCartButton from './AddToCartButton';
 import FreeShipping from './FreeShipping';
 import './ProductCard.css';
@@ -11,11 +12,9 @@ class ProductCard extends Component {
       title,
       image,
       price,
-      handleAddCartToList,
       productId,
       productList,
       availableQuantity,
-      itemsQuantity,
       freeShipping,
     } = this.props;
 
@@ -35,10 +34,8 @@ class ProductCard extends Component {
           </div>
         </Link>
         <AddToCartButton
-          handleAddCartToList={ handleAddCartToList }
           productId={ productId }
           productList={ productList }
-          itemsQuantity={ itemsQuantity }
           availableQuantity={ availableQuantity }
         />
       </section>
@@ -50,7 +47,6 @@ ProductCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  handleAddCartToList: PropTypes.func.isRequired,
   productId: PropTypes.string.isRequired,
   productList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
     PropTypes.string,
@@ -60,8 +56,9 @@ ProductCard.propTypes = {
     PropTypes.objectOf(PropTypes.any),
   ]))).isRequired,
   availableQuantity: PropTypes.number.isRequired,
-  itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
   freeShipping: PropTypes.bool.isRequired,
 };
+
+ProductCard.contextType = AppContext;
 
 export default ProductCard;

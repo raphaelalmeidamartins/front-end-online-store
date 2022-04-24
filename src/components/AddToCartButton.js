@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { AppContext } from '../context/AppContext';
 import './AddToCartButton.css';
 
 class AddToCartButton extends Component {
   render() {
     const {
-      handleAddCartToList,
       productId,
       productList,
       productObj,
     } = this.props;
+
+    const {
+      handleAddCartToList,
+    } = this.context;
 
     return (
       <button
@@ -30,7 +34,6 @@ AddToCartButton.defaultProps = {
 };
 
 AddToCartButton.propTypes = {
-  handleAddCartToList: PropTypes.func.isRequired,
   productId: PropTypes.string,
   productList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
   productObj: PropTypes.objectOf(PropTypes.oneOfType([
@@ -41,5 +44,7 @@ AddToCartButton.propTypes = {
     PropTypes.objectOf(PropTypes.any),
   ])),
 };
+
+AddToCartButton.contextType = AppContext;
 
 export default AddToCartButton;

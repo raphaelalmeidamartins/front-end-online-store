@@ -5,6 +5,7 @@ import { RiShoppingCartFill } from 'react-icons/ri';
 import { TiArrowBackOutline } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo-normal.png';
+import { AppContext } from '../context/AppContext';
 import './Header.css';
 
 class Header extends Component {
@@ -13,6 +14,9 @@ class Header extends Component {
       itemsQuantity,
       toggleCategories,
       displayCategories,
+    } = this.context;
+
+    const {
       history,
       history: {
         location: { pathname },
@@ -52,7 +56,13 @@ class Header extends Component {
               <RiShoppingCartFill />
             </div>
             <div className="Header-cart-quantity">
-              <span>{itemsQuantity}</span>
+              <span>
+                {Object.values(itemsQuantity)
+                  .reduce((acc, item) => {
+                    acc += item;
+                    return acc;
+                  }, 0)}
+              </span>
             </div>
           </Link>
         </div>
@@ -61,10 +71,9 @@ class Header extends Component {
   }
 }
 
+Header.contextType = AppContext;
+
 Header.propTypes = {
-  itemsQuantity: PropTypes.number.isRequired,
-  toggleCategories: PropTypes.func.isRequired,
-  displayCategories: PropTypes.bool.isRequired,
   history: PropTypes.shape({
     location: PropTypes.shape({
       pathname: PropTypes.string.isRequired,

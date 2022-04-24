@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { AppContext } from '../context/AppContext';
 import provincies from '../data/provinces';
 import './Checkout.css';
 import CheckoutTable from './CheckoutTable';
 
 class Checkout extends Component {
   render() {
-    const { cartList, itemsQuantity } = this.props;
+    const { cartList } = this.context;
 
     return (
       <main className="Checkout">
@@ -15,10 +15,7 @@ class Checkout extends Component {
           <>
             <section className="Checkout-products">
               <h2>Revise seus itens</h2>
-              <CheckoutTable
-                cartList={ cartList }
-                itemsQuantity={ itemsQuantity }
-              />
+              <CheckoutTable />
             </section>
             <form>
               <h2>Informações do Comprador</h2>
@@ -141,15 +138,6 @@ class Checkout extends Component {
   }
 }
 
-Checkout.propTypes = {
-  cartList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-    PropTypes.number,
-    PropTypes.bool,
-    PropTypes.objectOf(PropTypes.any),
-  ]))).isRequired,
-  itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
-};
+Checkout.contextType = AppContext;
 
 export default Checkout;

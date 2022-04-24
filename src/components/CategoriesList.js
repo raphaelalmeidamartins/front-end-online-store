@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { AppContext } from '../context/AppContext';
 import { getCategories } from '../services/api';
 import './CategoriesList.css';
 
@@ -24,12 +25,8 @@ class CategoriesList extends Component {
 
   render() {
     const { categories } = this.state;
-    const {
-      filterByCategory,
-      displayCategories,
-      toggleCategories,
-      categoryId,
-    } = this.props;
+    const { displayCategories, toggleCategories } = this.context;
+    const { filterByCategory, categoryId } = this.props;
 
     return (
       <aside
@@ -67,10 +64,10 @@ class CategoriesList extends Component {
   }
 }
 
+CategoriesList.contextType = AppContext;
+
 CategoriesList.propTypes = {
   filterByCategory: PropTypes.func.isRequired,
-  displayCategories: PropTypes.bool.isRequired,
-  toggleCategories: PropTypes.func.isRequired,
   categoryId: PropTypes.string.isRequired,
 };
 

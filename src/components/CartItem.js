@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { BiMinus, BiPlus } from 'react-icons/bi';
+import { AppContext } from '../context/AppContext';
 import './CartItem.css';
 
 class CartItem extends Component {
@@ -18,7 +19,8 @@ class CartItem extends Component {
   }
 
   decreaseQuantity = () => {
-    const { id, handleDecrease } = this.props;
+    const { id } = this.props;
+    const { handleDecrease } = this.context;
     const { quantity } = this.state;
     if (quantity > 1) {
       this.setState({ quantity: quantity - 1 }, handleDecrease(id));
@@ -26,7 +28,8 @@ class CartItem extends Component {
   };
 
   increaseQuantity = () => {
-    const { id, handleIncrease } = this.props;
+    const { handleIncrease } = this.context;
+    const { id } = this.props;
     const { props } = this;
     const availableQuantity = props.available_quantity;
     const { quantity } = this.state;
@@ -38,18 +41,15 @@ class CartItem extends Component {
   render() {
     const { quantity } = this.state;
     const { props } = this;
-    const { id, title, thumbnail, price, handleRemoveItem } = props;
+    const { id, title, thumbnail, price } = props;
     const availableQuantity = props.available_quantity;
+    const { handleRemoveItem } = this.context;
 
     return (
       <li className="CartItem">
         <div className="CartItem-container-item">
           <img src={ thumbnail } alt={ title } className="CartItem-image" />
-          <p
-            className="CartItem-title"
-          >
-            {title}
-          </p>
+          <p className="CartItem-title">{title}</p>
         </div>
         <span className="CartItem-price">
           <span>R$</span>
@@ -74,11 +74,7 @@ class CartItem extends Component {
                 <BiMinus />
               </span>
             </button>
-            <span
-              className="CartItem-quantity"
-            >
-              {quantity}
-            </span>
+            <span className="CartItem-quantity">{quantity}</span>
             <button
               type="button"
               className="CartItem-icon"
@@ -104,9 +100,6 @@ CartItem.propTypes = {
   price: PropTypes.number,
   quantity: PropTypes.number.isRequired,
   available_quantity: PropTypes.number,
-  handleDecrease: PropTypes.func.isRequired,
-  handleIncrease: PropTypes.func.isRequired,
-  handleRemoveItem: PropTypes.func.isRequired,
 };
 
 CartItem.defaultProps = {
@@ -116,5 +109,7 @@ CartItem.defaultProps = {
   price: 0,
   available_quantity: 0,
 };
+
+CartItem.contextType = AppContext;
 
 export default CartItem;

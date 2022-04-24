@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { AppContext } from '../context/AppContext';
 import CartItem from './CartItem';
 import './ShoppingCart.css';
 
@@ -13,10 +14,7 @@ class ShoppingCart extends React.Component {
     const {
       cartList,
       itemsQuantity,
-      handleIncrease,
-      handleDecrease,
-      handleRemoveItem,
-    } = this.props;
+    } = this.context;
 
     return (
       <main className="ShoppingCart">
@@ -33,9 +31,6 @@ class ShoppingCart extends React.Component {
                   key={ productId }
                   { ...cartList.find((item) => item.id === productId) }
                   quantity={ itemsQuantity[productId] }
-                  handleDecrease={ handleDecrease }
-                  handleIncrease={ handleIncrease }
-                  handleRemoveItem={ handleRemoveItem }
                 />
               ))}
           </ul>
@@ -64,25 +59,12 @@ class ShoppingCart extends React.Component {
   }
 }
 
-ShoppingCart.defaultProps = {
-  cartList: [],
-};
-
 ShoppingCart.propTypes = {
-  cartList: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-    PropTypes.number,
-    PropTypes.bool,
-    PropTypes.objectOf(PropTypes.any),
-  ]))),
-  itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
-  handleDecrease: PropTypes.func.isRequired,
-  handleIncrease: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
-  handleRemoveItem: PropTypes.func.isRequired,
 };
+
+ShoppingCart.contextType = AppContext;
 
 export default ShoppingCart;

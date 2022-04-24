@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FiSearch } from 'react-icons/fi';
+import { AppContext } from '../context/AppContext';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import CategoriesList from './CategoriesList';
 import ProductCard from './ProductCard';
@@ -45,19 +45,11 @@ class SearchList extends Component {
 
   render() {
     const { productsList, query, categoryId } = this.state;
-    const {
-      handleAddCartToList,
-      itemsQuantity,
-      displayCategories,
-      toggleCategories,
-    } = this.props;
 
     return (
       <main className="pageContainer">
         <CategoriesList
           filterByCategory={ this.filterByCategory }
-          displayCategories={ displayCategories }
-          toggleCategories={ toggleCategories }
           categoryId={ categoryId }
         />
         <section className="SearchList">
@@ -103,8 +95,6 @@ class SearchList extends Component {
                     availableQuantity={ product.available_quantity }
                     productId={ product.id }
                     productList={ productsList }
-                    handleAddCartToList={ handleAddCartToList }
-                    itemsQuantity={ itemsQuantity }
                   />
                 );
               })}
@@ -115,11 +105,6 @@ class SearchList extends Component {
   }
 }
 
-SearchList.propTypes = {
-  handleAddCartToList: PropTypes.func.isRequired,
-  itemsQuantity: PropTypes.objectOf(PropTypes.number).isRequired,
-  displayCategories: PropTypes.bool.isRequired,
-  toggleCategories: PropTypes.func.isRequired,
-};
+SearchList.contextType = AppContext;
 
 export default SearchList;
