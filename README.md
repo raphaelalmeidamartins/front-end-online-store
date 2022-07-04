@@ -61,6 +61,7 @@ Tivemos que desenvolver uma aplicação React de loja online consumindo dados da
 * Sass
 * JavaScript ES6+
 * React.js
+* React Router
 * React Context API
 * React Icons (icon library)
 * GitHub Pages
